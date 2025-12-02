@@ -364,6 +364,73 @@
   inset-inline-end: 0 !important;
 }
 
+/* 既存の予定のスタイリング（背景に表示） */
+.fc-event.existing-event {
+  border-radius: 4px;
+  cursor: default;
+  z-index: 1 !important;
+  opacity: 0.8;
+}
+
+.fc-event.existing-event .fc-event-main {
+  font-weight: 400;
+  padding: 4px 6px;
+  font-size: 11px;
+}
+
+/* ユーザー1の予定（紫） */
+.fc-event.existing-event.user-1 {
+  background-color: rgba(167, 139, 250, 0.3) !important;
+  border: 1px solid rgba(139, 92, 246, 0.4) !important;
+}
+
+.fc-event.existing-event.user-1 .fc-event-main {
+  color: #6b21a8;
+}
+
+/* ユーザー2の予定（緑） */
+.fc-event.existing-event.user-2 {
+  background-color: rgba(134, 239, 172, 0.3) !important;
+  border: 1px solid rgba(74, 222, 128, 0.4) !important;
+}
+
+.fc-event.existing-event.user-2 .fc-event-main {
+  color: #166534;
+}
+
+/* ユーザー3の予定（オレンジ） */
+.fc-event.existing-event.user-3 {
+  background-color: rgba(253, 186, 116, 0.3) !important;
+  border: 1px solid rgba(251, 146, 60, 0.4) !important;
+}
+
+.fc-event.existing-event.user-3 .fc-event-main {
+  color: #9a3412;
+}
+
+/* ユーザー4の予定（ピンク） */
+.fc-event.existing-event.user-4 {
+  background-color: rgba(244, 114, 182, 0.3) !important;
+  border: 1px solid rgba(236, 72, 153, 0.4) !important;
+}
+
+.fc-event.existing-event.user-4 .fc-event-main {
+  color: #831843;
+}
+
+/* z-indexの優先度を設定 */
+.fc-event.existing-event {
+  z-index: 1 !important;
+}
+
+.fc-event.available-slot {
+  z-index: 5 !important;
+}
+
+.fc-event.movable-event {
+  z-index: 10 !important;
+}
+
 .fc-event-main {
   color: #1e40af;
   font-weight: 500;
