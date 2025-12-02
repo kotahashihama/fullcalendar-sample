@@ -101,6 +101,47 @@
   border-color: #0ea5e9;
 }
 
+/* ビュー選択ドロップダウン */
+.view-selector-wrapper {
+  position: relative;
+}
+
+.view-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  min-width: 120px;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.view-dropdown-item {
+  width: 100%;
+  padding: 8px 16px;
+  text-align: left;
+  background-color: #ffffff;
+  border: none;
+  color: #374151;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: block;
+}
+
+.view-dropdown-item:hover {
+  background-color: #f9fafb;
+}
+
+.view-dropdown-item.active {
+  background-color: #eff6ff;
+  color: #0ea5e9;
+  font-weight: 600;
+}
+
 .login-info {
   display: flex;
   align-items: center;
@@ -146,6 +187,21 @@
   border-radius: 8px;
   padding: 0;
   box-shadow: none;
+  position: relative;
+}
+
+/* カレンダー内のビュー選択ドロップダウン */
+.calendar-view-dropdown-menu {
+  position: absolute;
+  top: 60px;
+  right: 140px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  min-width: 120px;
+  overflow: hidden;
+  z-index: 100;
 }
 
 /* FullCalendar カスタマイズ */

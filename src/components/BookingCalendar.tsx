@@ -16,6 +16,8 @@ interface Event {
 }
 
 const BookingCalendar: React.FC = () => {
+  const [currentView, setCurrentView] = useState<'timeGridWeek' | 'timeGridThreeDay' | 'timeGridDay'>('timeGridWeek');
+  const [showViewMenu, setShowViewMenu] = useState(false);
   const [events, setEvents] = useState<Event[]>([
     // 火曜日 12/9 の利用可能スロット（背景、移動不可）
     { id: '1', start: '2025-12-09T09:00:00', end: '2025-12-09T11:00:00', title: '9:00-11:00', editable: false, className: 'available-slot' },
@@ -134,6 +136,23 @@ const BookingCalendar: React.FC = () => {
     );
   };
 
+  const handleViewChange = (view: 'timeGridWeek' | 'timeGridThreeDay' | 'timeGridDay') => {
+    setCurrentView(view);
+  };
+
+  const getViewLabel = () => {
+    switch (currentView) {
+      case 'timeGridWeek':
+        return '週';
+      case 'timeGridThreeDay':
+        return '3日';
+      case 'timeGridDay':
+        return '日';
+      default:
+        return '週';
+    }
+  };
+
   return (
     <div className="booking-container">
       <div className="booking-sidebar">
@@ -182,23 +201,63 @@ const BookingCalendar: React.FC = () => {
         </div>
 
         <div className="calendar-wrapper">
+          {showViewMenu && (
+            <div className="calendar-view-dropdown-menu">
+              <button
+                className={`view-dropdown-item ${currentView === 'timeGridDay' ? 'active' : ''}`}
+                onClick={() => {
+                  handleViewChange('timeGridDay');
+                  setShowViewMenu(false);
+                }}
+              >
+                日
+              </button>
+              <button
+                className={`view-dropdown-item ${currentView === 'timeGridThreeDay' ? 'active' : ''}`}
+                onClick={() => {
+                  handleViewChange('timeGridThreeDay');
+                  setShowViewMenu(false);
+                }}
+              >
+                3日
+              </button>
+              <button
+                className={`view-dropdown-item ${currentView === 'timeGridWeek' ? 'active' : ''}`}
+                onClick={() => {
+                  handleViewChange('timeGridWeek');
+                  setShowViewMenu(false);
+                }}
+              >
+                週
+              </button>
+            </div>
+          )}
           <FullCalendar
             plugins={[timeGridPlugin, interactionPlugin]}
-            initialView="timeGridWeek"
-            initialDate="2025-12-09"
+            initialView={currentView}
+            initialDate={currentView === 'timeGridThreeDay' ? new Date().toISOString().split('T')[0] : '2025-12-09'}
             locale={jaLocale}
+            key={currentView}
             headerToolbar={{
               left: 'title',
               center: '',
-              right: 'customViewSelector prev,next today'
+              right: 'viewSelector prev,next today'
             }}
             titleFormat={{ year: 'numeric', month: 'long' }}
             buttonText={{
               today: '今日'
             }}
             customButtons={{
-              customViewSelector: {
-                text: '週 ▼',
+              viewSelector: {
+                text: `${getViewLabel()} ▼`,
+                click: () => setShowViewMenu(!showViewMenu)
+              }
+            }}
+            views={{
+              timeGridThreeDay: {
+                type: 'timeGrid',
+                duration: { days: 3 },
+                dateIncrement: { days: 3 }
               }
             }}
             slotMinTime="08:00:00"
@@ -256,7 +315,7 @@ const BookingCalendar: React.FC = () => {
               meridiem: false
             }}
             businessHours={false}
-            hiddenDays={[0, 6]}
+            firstDay={0}
           />
         </div>
       </div>
