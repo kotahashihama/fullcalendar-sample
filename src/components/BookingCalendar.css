@@ -184,7 +184,8 @@
 .calendar-wrapper {
   background-color: #ffffff;
   border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
   padding: 0;
   box-shadow: none;
   position: relative;
@@ -248,11 +249,7 @@
 }
 
 .fc .fc-col-header-cell {
-  padding: 16px 8px;
-  font-weight: 500;
-  color: #6b7280;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+  display: none;
 }
 
 .fc .fc-timegrid-slot {
@@ -517,48 +514,176 @@ td.fc-timegrid-col.striped-day::before {
   padding-left: 12px;
 }
 
+/* 共通のカレンダーヘッダー */
+.common-calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.common-calendar-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.common-calendar-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.common-control-button {
+  padding: 5px 10px;
+  background-color: #ffffff;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.common-control-button:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.common-nav-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.common-nav-button {
+  padding: 5px 10px;
+  background-color: #ffffff;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.common-nav-button:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.common-today-button {
+  padding: 5px 10px;
+  background-color: #ffffff;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.common-today-button:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+/* 共通の日付ヘッダー */
+.common-day-headers {
+  display: grid;
+  gap: 0;
+  margin-bottom: 0;
+  border-bottom: 2px solid #e5e7eb;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-bottom: 2px solid #e5e7eb;
+  border-radius: 8px 8px 0 0;
+}
+
+/* 日付ヘッダーのカラム数をビューに応じて変更 */
+.common-day-headers {
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+
+.common-day-header-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 8px;
+  gap: 6px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.common-day-header-cell:last-child {
+  border-right: none;
+}
+
+.common-day-name {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.common-day-number {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.common-day-number.has-slots {
+  background-color: #dbeafe;
+  color: #0ea5e9;
+  border-radius: 50%;
+}
+
+/* 今日の日付の下に青丸を表示 */
+.common-day-number.is-today::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #0ea5e9;
+}
+
 /* リストビュー */
 .list-view {
   background-color: #ffffff;
   border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 24px;
-  margin-top: 24px;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 0;
 }
 
-.list-view-header {
+.list-view-content {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 0;
 }
 
 .list-view-day-column {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0;
+  padding: 16px 12px;
+  border-right: 1px solid #e5e7eb;
 }
 
-.list-view-day-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.list-day-number {
-  font-size: 24px;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 4px;
-}
-
-.list-day-name {
-  font-size: 12px;
-  font-weight: 500;
-  color: #6b7280;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.list-view-day-column:last-child {
+  border-right: none;
 }
 
 .list-view-slots {
