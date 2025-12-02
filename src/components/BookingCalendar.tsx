@@ -334,7 +334,7 @@ const BookingCalendar: React.FC = () => {
     today.setHours(0, 0, 0, 0);
 
     return (
-      <div className="common-day-headers">
+      <div className={`common-day-headers ${viewMode === 'calendar' ? 'calendar-mode' : 'list-mode'}`}>
         {dates.map((date, index) => {
           const dayOfWeek = ['日', '月', '火', '水', '木', '金', '土'][date.getDay()];
           const dayNumber = date.getDate();

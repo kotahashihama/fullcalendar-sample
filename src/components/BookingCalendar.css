@@ -608,6 +608,11 @@ td.fc-timegrid-col.striped-day::before {
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 }
 
+/* カレンダービューの場合、時刻ラベルの幅分だけ左側にパディングを追加 */
+.common-day-headers.calendar-mode {
+  padding-left: 46px;
+}
+
 .common-day-header-cell {
   display: flex;
   flex-direction: column;
