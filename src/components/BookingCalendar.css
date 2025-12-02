@@ -516,3 +516,77 @@ td.fc-timegrid-col.striped-day::before {
   text-align: left;
   padding-left: 12px;
 }
+
+/* リストビュー */
+.list-view {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.list-view-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 16px;
+}
+
+.list-view-day-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.list-view-day-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.list-day-number {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.list-day-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.list-view-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list-slot-button {
+  padding: 10px 12px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  color: #0ea5e9;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.list-slot-button:hover {
+  background-color: #eff6ff;
+  border-color: #0ea5e9;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.list-slot-button:active {
+  background-color: #dbeafe;
+  transform: scale(0.98);
+}

@@ -18,6 +18,7 @@ interface Event {
 const BookingCalendar: React.FC = () => {
   const [currentView, setCurrentView] = useState<'timeGridWeek' | 'timeGridThreeDay' | 'timeGridDay'>('timeGridWeek');
   const [showViewMenu, setShowViewMenu] = useState(false);
+  const [viewMode, setViewMode] = useState<'calendar' | 'list'>('calendar');
 
   const events: Event[] = [
     // 火曜日 12/9 の利用可能スロット（背景、移動不可）
@@ -140,6 +141,86 @@ const BookingCalendar: React.FC = () => {
     }
   };
 
+  // リストビュー用：日付ごとに利用可能スロットをグループ化
+  const getAvailableSlotsByDate = () => {
+    const slotsByDate: { [date: string]: { time: string; start: string; end: string }[] } = {};
+
+    events
+      .filter(event => event.className?.includes('available-slot'))
+      .forEach(event => {
+        const date = event.start.split('T')[0];
+        const startTime = new Date(event.start);
+        const endTime = new Date(event.end);
+
+        if (!slotsByDate[date]) {
+          slotsByDate[date] = [];
+        }
+
+        // 30分刻みでスロットを生成
+        let currentTime = new Date(startTime);
+        while (currentTime < endTime) {
+          const nextTime = new Date(currentTime.getTime() + 30 * 60 * 1000);
+          const timeStr = `${String(currentTime.getHours()).padStart(2, '0')}:${String(currentTime.getMinutes()).padStart(2, '0')}`;
+          slotsByDate[date].push({
+            time: timeStr,
+            start: currentTime.toISOString(),
+            end: nextTime.toISOString()
+          });
+          currentTime = nextTime;
+        }
+      });
+
+    return slotsByDate;
+  };
+
+  // リストビュー用：週の日付を取得
+  const getWeekDates = () => {
+    const startDate = new Date('2025-12-07'); // 日曜日から開始
+    const dates = [];
+    for (let i = 0; i < 7; i++) {
+      const date = new Date(startDate);
+      date.setDate(startDate.getDate() + i);
+      dates.push(date);
+    }
+    return dates;
+  };
+
+  const renderListView = () => {
+    const slotsByDate = getAvailableSlotsByDate();
+    const weekDates = getWeekDates();
+
+    return (
+      <div className="list-view">
+        <div className="list-view-header">
+          {weekDates.map((date, index) => {
+            const dateStr = date.toISOString().split('T')[0];
+            const dayOfWeek = ['日', '月', '火', '水', '木', '金', '土'][date.getDay()];
+            const dayNumber = date.getDate();
+            const hasSlots = slotsByDate[dateStr] && slotsByDate[dateStr].length > 0;
+
+            return (
+              <div key={index} className="list-view-day-column">
+                <div className="list-view-day-header">
+                  <div className="list-day-number">{dayNumber}</div>
+                  <div className="list-day-name">{dayOfWeek}</div>
+                </div>
+                <div className="list-view-slots">
+                  {hasSlots ? (
+                    slotsByDate[dateStr].map((slot, slotIndex) => (
+                      <button key={slotIndex} className="list-slot-button">
+                        {slot.time}
+                      </button>
+                    ))
+                  ) : null}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="booking-container">
       <div className="booking-sidebar">
@@ -174,8 +255,18 @@ const BookingCalendar: React.FC = () => {
           <h3 className="calendar-title">日程を選択してください</h3>
           <div className="calendar-controls">
             <button className="control-button">日本標準時間 ▼</button>
-            <button className="control-button">リスト</button>
-            <button className="control-button active">カレンダー</button>
+            <button
+              className={`control-button ${viewMode === 'list' ? 'active' : ''}`}
+              onClick={() => setViewMode('list')}
+            >
+              リスト
+            </button>
+            <button
+              className={`control-button ${viewMode === 'calendar' ? 'active' : ''}`}
+              onClick={() => setViewMode('calendar')}
+            >
+              カレンダー
+            </button>
           </div>
         </div>
 
@@ -187,39 +278,40 @@ const BookingCalendar: React.FC = () => {
           <button className="login-button">ログイン</button>
         </div>
 
-        <div className="calendar-wrapper">
-          {showViewMenu && (
-            <div className="calendar-view-dropdown-menu">
-              <button
-                className={`view-dropdown-item ${currentView === 'timeGridDay' ? 'active' : ''}`}
-                onClick={() => {
-                  handleViewChange('timeGridDay');
-                  setShowViewMenu(false);
-                }}
-              >
-                日
-              </button>
-              <button
-                className={`view-dropdown-item ${currentView === 'timeGridThreeDay' ? 'active' : ''}`}
-                onClick={() => {
-                  handleViewChange('timeGridThreeDay');
-                  setShowViewMenu(false);
-                }}
-              >
-                3日
-              </button>
-              <button
-                className={`view-dropdown-item ${currentView === 'timeGridWeek' ? 'active' : ''}`}
-                onClick={() => {
-                  handleViewChange('timeGridWeek');
-                  setShowViewMenu(false);
-                }}
-              >
-                週
-              </button>
-            </div>
-          )}
-          <FullCalendar
+        {viewMode === 'calendar' ? (
+          <div className="calendar-wrapper">
+            {showViewMenu && (
+              <div className="calendar-view-dropdown-menu">
+                <button
+                  className={`view-dropdown-item ${currentView === 'timeGridDay' ? 'active' : ''}`}
+                  onClick={() => {
+                    handleViewChange('timeGridDay');
+                    setShowViewMenu(false);
+                  }}
+                >
+                  日
+                </button>
+                <button
+                  className={`view-dropdown-item ${currentView === 'timeGridThreeDay' ? 'active' : ''}`}
+                  onClick={() => {
+                    handleViewChange('timeGridThreeDay');
+                    setShowViewMenu(false);
+                  }}
+                >
+                  3日
+                </button>
+                <button
+                  className={`view-dropdown-item ${currentView === 'timeGridWeek' ? 'active' : ''}`}
+                  onClick={() => {
+                    handleViewChange('timeGridWeek');
+                    setShowViewMenu(false);
+                  }}
+                >
+                  週
+                </button>
+              </div>
+            )}
+            <FullCalendar
             plugins={[timeGridPlugin, interactionPlugin]}
             initialView={currentView}
             initialDate={currentView === 'timeGridThreeDay' ? new Date().toISOString().split('T')[0] : '2025-12-09'}
@@ -306,7 +398,10 @@ const BookingCalendar: React.FC = () => {
             businessHours={false}
             firstDay={0}
           />
-        </div>
+          </div>
+        ) : (
+          renderListView()
+        )}
       </div>
     </div>
   );
