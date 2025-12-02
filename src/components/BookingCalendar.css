@@ -14,25 +14,26 @@
 
 .booking-sidebar {
   width: 320px;
-  padding: 40px 30px;
-  background-color: #ffffff;
+  padding: 32px 24px;
+  background-color: #fafafa;
   border-right: 1px solid #e5e7eb;
   display: flex;
   flex-direction: column;
 }
 
 .booking-title {
-  font-size: 24px;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
 
 .booking-description {
-  font-size: 14px;
+  font-size: 13px;
   color: #6b7280;
-  line-height: 1.6;
-  margin-bottom: 32px;
+  line-height: 1.7;
+  margin-bottom: 24px;
 }
 
 .booking-info {
@@ -44,15 +45,16 @@
 .info-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 14px;
+  gap: 10px;
+  font-size: 13px;
   color: #374151;
 }
 
 .info-icon {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   color: #6b7280;
+  flex-shrink: 0;
 }
 
 .language-selector {
@@ -63,11 +65,11 @@
 
 .language-button {
   width: 100%;
-  padding: 8px 12px;
-  background-color: transparent;
+  padding: 6px 10px;
+  background-color: #ffffff;
   border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 14px;
+  border-radius: 4px;
+  font-size: 13px;
   color: #374151;
   cursor: pointer;
   text-align: left;
@@ -171,13 +173,13 @@
 .login-info {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 16px;
+  gap: 10px;
+  padding: 12px 14px;
   background-color: #eff6ff;
   border: 1px solid #dbeafe;
-  border-radius: 6px;
+  border-radius: 4px;
   margin-bottom: 24px;
-  font-size: 13px;
+  font-size: 12px;
   color: #1e40af;
   line-height: 1.5;
 }
@@ -191,12 +193,12 @@
 
 .login-button {
   margin-left: auto;
-  padding: 6px 16px;
-  background-color: #0ea5e9;
+  padding: 6px 14px;
+  background-color: #0284c7;
   color: #ffffff;
   border: none;
-  border-radius: 6px;
-  font-size: 13px;
+  border-radius: 4px;
+  font-size: 12px;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s;
@@ -204,14 +206,14 @@
 }
 
 .login-button:hover {
-  background-color: #0284c7;
+  background-color: #0369a1;
 }
 
 .calendar-wrapper {
   background-color: #ffffff;
   border: 1px solid #e5e7eb;
   border-top: none;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 6px 6px;
   padding: 0;
   box-shadow: none;
   position: relative;
@@ -324,48 +326,48 @@
 
 /* 利用可能スロットのスタイリング（背景） */
 .fc-event.available-slot {
-  background-color: #eff6ff !important;
-  border: 1.5px dashed #93c5fd !important;
-  border-radius: 6px;
+  background-color: #f0f9ff !important;
+  border: 1.5px dashed #7dd3fc !important;
+  border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .fc-event.available-slot:hover {
-  background-color: #dbeafe !important;
-  border-color: #60a5fa !important;
+  background-color: #e0f2fe !important;
+  border-color: #38bdf8 !important;
 }
 
 .fc-event.available-slot .fc-event-main {
-  color: #3b82f6;
-  font-weight: 500;
+  color: #0284c7;
+  font-weight: 400;
   padding: 6px 8px;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 /* 移動可能なイベントのスタイリング */
 .fc-event.movable-event {
-  background-color: #3b82f6 !important;
-  border: 1px solid #2563eb !important;
-  border-radius: 8px;
+  background-color: #0284c7 !important;
+  border: 1px solid #0369a1 !important;
+  border-radius: 6px;
   cursor: move;
   transition: all 0.2s;
   z-index: 10;
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
 }
 
 .fc-event.movable-event:hover {
-  background-color: #2563eb !important;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  background-color: #0369a1 !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.15), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 .fc-event.movable-event .fc-event-main {
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 500;
   padding: 10px 12px;
   text-align: center;
-  font-size: 13px;
-  line-height: 1.4;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 /* 移動可能なイベントのハーネスを100%幅に */
@@ -617,9 +619,9 @@ td.fc-timegrid-col.striped-day::before {
 }
 
 .common-calendar-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: #111827;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
 }
 
 .common-calendar-controls {
@@ -629,12 +631,12 @@ td.fc-timegrid-col.striped-day::before {
 }
 
 .common-control-button {
-  padding: 5px 10px;
+  padding: 4px 8px;
   background-color: #ffffff;
   color: #6b7280;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  font-size: 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 12px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
@@ -651,15 +653,20 @@ td.fc-timegrid-col.striped-day::before {
 }
 
 .common-nav-button {
-  padding: 5px 10px;
+  padding: 4px 10px;
   background-color: #ffffff;
   color: #6b7280;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 500;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 400;
   cursor: pointer;
   transition: all 0.2s;
+  min-width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .common-nav-button:hover {
@@ -668,15 +675,16 @@ td.fc-timegrid-col.striped-day::before {
 }
 
 .common-today-button {
-  padding: 5px 10px;
+  padding: 4px 12px;
   background-color: #ffffff;
   color: #6b7280;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  font-size: 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 12px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
+  height: 32px;
 }
 
 .common-today-button:hover {
@@ -693,7 +701,7 @@ td.fc-timegrid-col.striped-day::before {
   background-color: #ffffff;
   border: 1px solid #e5e7eb;
   border-bottom: 2px solid #e5e7eb;
-  border-radius: 8px 8px 0 0;
+  border-radius: 6px 6px 0 0;
 }
 
 /* 日付ヘッダーのカラム数をビューに応じて変更 */
@@ -720,15 +728,15 @@ td.fc-timegrid-col.striped-day::before {
 }
 
 .common-day-name {
-  font-size: 12px;
+  font-size: 11px;
   color: #9ca3af;
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
 .common-day-number {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 400;
   color: #374151;
   width: 32px;
   height: 32px;
@@ -736,12 +744,21 @@ td.fc-timegrid-col.striped-day::before {
   align-items: center;
   justify-content: center;
   position: relative;
+  border-radius: 50%;
+  transition: all 0.2s;
 }
 
 .common-day-number.has-slots {
-  background-color: #dbeafe;
-  color: #0ea5e9;
-  border-radius: 50%;
+  background-color: #e0f2fe;
+  color: #0284c7;
+  font-weight: 600;
+}
+
+/* 今日の日付のスタイル */
+.common-day-number.is-today {
+  background-color: #0284c7;
+  color: #ffffff;
+  font-weight: 600;
 }
 
 /* 今日の日付の下に青丸を表示 */
@@ -754,7 +771,7 @@ td.fc-timegrid-col.striped-day::before {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: #0ea5e9;
+  background-color: #0284c7;
 }
 
 /* リストビュー */
@@ -762,7 +779,7 @@ td.fc-timegrid-col.striped-day::before {
   background-color: #ffffff;
   border: 1px solid #e5e7eb;
   border-top: none;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 6px 6px;
   padding: 0;
 }
 
@@ -791,12 +808,12 @@ td.fc-timegrid-col.striped-day::before {
 }
 
 .list-slot-button {
-  padding: 10px 12px;
+  padding: 8px 10px;
   background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  color: #0ea5e9;
-  font-size: 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  color: #0284c7;
+  font-size: 12px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
@@ -804,12 +821,12 @@ td.fc-timegrid-col.striped-day::before {
 }
 
 .list-slot-button:hover {
-  background-color: #eff6ff;
-  border-color: #0ea5e9;
+  background-color: #f0f9ff;
+  border-color: #0284c7;
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 }
 
 .list-slot-button:active {
-  background-color: #dbeafe;
+  background-color: #e0f2fe;
   transform: scale(0.98);
 }
