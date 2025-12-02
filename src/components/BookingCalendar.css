@@ -17,6 +17,8 @@
   padding: 40px 30px;
   background-color: #ffffff;
   border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
 }
 
 .booking-title {
@@ -51,6 +53,30 @@
   width: 20px;
   height: 20px;
   color: #6b7280;
+}
+
+.language-selector {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.language-button {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: transparent;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.language-button:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
 }
 
 .booking-main {

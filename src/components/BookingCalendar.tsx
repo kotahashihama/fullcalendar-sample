@@ -465,6 +465,9 @@ const BookingCalendar: React.FC = () => {
             <span>日程確定後にリンク発行</span>
           </div>
         </div>
+        <div className="language-selector">
+          <button className="language-button">日本語 ▼</button>
+        </div>
       </div>
 
       <div className="booking-main">
