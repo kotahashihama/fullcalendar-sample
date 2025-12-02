@@ -18,7 +18,8 @@ interface Event {
 const BookingCalendar: React.FC = () => {
   const [currentView, setCurrentView] = useState<'timeGridWeek' | 'timeGridThreeDay' | 'timeGridDay'>('timeGridWeek');
   const [showViewMenu, setShowViewMenu] = useState(false);
-  const [events, setEvents] = useState<Event[]>([
+
+  const events: Event[] = [
     // 火曜日 12/9 の利用可能スロット（背景、移動不可）
     { id: '1', start: '2025-12-09T09:00:00', end: '2025-12-09T11:00:00', title: '9:00-11:00', editable: false, className: 'available-slot' },
     { id: '2', start: '2025-12-09T13:00:00', end: '2025-12-09T14:00:00', title: '13:00-14:00', editable: false, className: 'available-slot' },
@@ -34,14 +35,12 @@ const BookingCalendar: React.FC = () => {
     { id: '8', start: '2025-12-12T13:00:00', end: '2025-12-12T14:00:00', title: '13:00-14:00', editable: false, className: 'available-slot' },
     { id: '9', start: '2025-12-12T16:00:00', end: '2025-12-12T18:00:00', title: '16:00-18:00', editable: false, className: 'available-slot' },
 
-    // 移動可能な1時間のイベント
+    // 移動可能なイベント（最初のスロット内に配置）
     { id: 'movable-1', start: '2025-12-09T09:00:00', end: '2025-12-09T10:00:00', title: '予約枠', editable: true, className: 'movable-event' },
-  ]);
+  ];
 
   const handleEventClick = (info: any) => {
-    if (!info.event.extendedProps.editable) {
-      alert(`予約時間: ${info.event.startStr} - ${info.event.endStr}`);
-    }
+    // クリックハンドラーは不要
   };
 
   const handleEventDrop = (info: any) => {
@@ -64,18 +63,6 @@ const BookingCalendar: React.FC = () => {
       info.revert();
       alert('利用可能な時間帯（青い点線の範囲）内に配置してください');
     } else {
-      // イベントの位置を更新（定着させる）
-      setEvents((prevEvents) =>
-        prevEvents.map((event) =>
-          event.id === droppedEvent.id
-            ? {
-                ...event,
-                start: newStart.toISOString(),
-                end: newEnd.toISOString(),
-              }
-            : event
-        )
-      );
       console.log('イベントが移動されました:', info.event.title, 'to', newStart);
     }
   };
@@ -273,7 +260,9 @@ const BookingCalendar: React.FC = () => {
               return arg.event.extendedProps.className || [];
             }}
             eventDidMount={(info) => {
-              if (info.event.extendedProps.className?.includes('movable-event')) {
+              const isMovableEvent = info.event.extendedProps.className?.includes('movable-event');
+
+              if (isMovableEvent) {
                 const el = info.el;
                 el.style.left = '0';
                 el.style.right = '0';
