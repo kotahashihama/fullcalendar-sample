@@ -1,0 +1,462 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.booking-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.booking-sidebar {
+  width: 320px;
+  padding: 40px 30px;
+  background-color: #ffffff;
+  border-right: 1px solid #e5e7eb;
+}
+
+.booking-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.booking-description {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.booking-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.info-icon {
+  width: 20px;
+  height: 20px;
+  color: #6b7280;
+}
+
+.booking-main {
+  flex: 1;
+  padding: 32px 48px;
+  background-color: #ffffff;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.calendar-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.calendar-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.control-button {
+  padding: 6px 14px;
+  font-size: 13px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  color: #6b7280;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.control-button:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.control-button.active {
+  background-color: #0ea5e9;
+  color: #ffffff;
+  border-color: #0ea5e9;
+}
+
+.login-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background-color: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: #1e40af;
+  line-height: 1.5;
+}
+
+.info-icon-blue {
+  width: 18px;
+  height: 18px;
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+.login-button {
+  margin-left: auto;
+  padding: 6px 16px;
+  background-color: #0ea5e9;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+}
+
+.login-button:hover {
+  background-color: #0284c7;
+}
+
+.calendar-wrapper {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0;
+  box-shadow: none;
+}
+
+/* FullCalendar カスタマイズ */
+.fc {
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.fc .fc-button {
+  padding: 5px 10px;
+  background-color: #ffffff;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+  text-transform: none;
+}
+
+.fc .fc-button:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.fc .fc-button:disabled {
+  opacity: 0.5;
+}
+
+.fc .fc-button:focus {
+  box-shadow: none;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+  background-color: #0ea5e9;
+  border-color: #0ea5e9;
+  color: #ffffff;
+}
+
+.fc .fc-col-header-cell {
+  padding: 16px 8px;
+  font-weight: 500;
+  color: #6b7280;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.fc .fc-timegrid-slot {
+  height: 48px;
+  border-color: #f3f4f6;
+}
+
+.fc .fc-timegrid-slot-label {
+  color: #9ca3af;
+  font-size: 12px;
+  font-weight: 400;
+  vertical-align: top;
+  padding-top: 4px;
+}
+
+.fc .fc-scrollgrid {
+  border-color: #e5e7eb;
+}
+
+.fc .fc-scrollgrid td,
+.fc .fc-scrollgrid th {
+  border-color: #e5e7eb;
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border-color: #e5e7eb;
+}
+
+.fc-theme-standard .fc-scrollgrid {
+  border-color: #e5e7eb;
+}
+
+.fc .fc-timegrid-divider {
+  display: none;
+}
+
+.fc .fc-day-today {
+  background-color: transparent !important;
+}
+
+.fc .fc-day-today .fc-col-header-cell-cushion {
+  color: #0ea5e9;
+  font-weight: 600;
+}
+
+/* 利用可能スロットのスタイリング（背景） */
+.fc-event.available-slot {
+  background-color: #eff6ff !important;
+  border: 1.5px dashed #93c5fd !important;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.fc-event.available-slot:hover {
+  background-color: #dbeafe !important;
+  border-color: #60a5fa !important;
+}
+
+.fc-event.available-slot .fc-event-main {
+  color: #3b82f6;
+  font-weight: 500;
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
+/* 移動可能なイベントのスタイリング */
+.fc-event.movable-event {
+  background-color: #3b82f6 !important;
+  border: 1px solid #2563eb !important;
+  border-radius: 8px;
+  cursor: move;
+  transition: all 0.2s;
+  z-index: 10;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.fc-event.movable-event:hover {
+  background-color: #2563eb !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.fc-event.movable-event .fc-event-main {
+  color: #ffffff;
+  font-weight: 600;
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* 移動可能なイベントのハーネスを100%幅に */
+.fc-timegrid-event.movable-event {
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.fc-timegrid-event-harness:has(.movable-event),
+.fc-timegrid-event-harness.movable-event-harness {
+  left: 0 !important;
+  right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* FullCalendarが自動で付与する位置スタイルを上書き */
+.fc .fc-timegrid-event.movable-event {
+  inset-inline-start: 0 !important;
+  inset-inline-end: 0 !important;
+}
+
+.fc-event-main {
+  color: #1e40af;
+  font-weight: 500;
+  padding: 4px;
+}
+
+/* 利用不可能な時間帯（斜線パターン） - 曜日ごとに設定 */
+.fc-timegrid-col.striped-day,
+.fc-timegrid-col-bg .striped-day {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 8px,
+    rgba(0, 0, 0, 0.02) 8px,
+    rgba(0, 0, 0, 0.02) 16px
+  ) !important;
+}
+
+/* TimeGrid内の日セルに斜線を追加 */
+td.fc-timegrid-col.striped-day {
+  position: relative;
+}
+
+td.fc-timegrid-col.striped-day::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 8px,
+    rgba(0, 0, 0, 0.025) 8px,
+    rgba(0, 0, 0, 0.025) 16px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fc-timegrid-event-harness {
+  margin-right: 2px !important;
+}
+
+/* 日付ヘッダーのカスタマイズ */
+.fc .fc-col-header-cell {
+  border-bottom: 2px solid #e5e7eb;
+  padding: 16px 8px;
+}
+
+.fc .fc-col-header-cell-cushion {
+  padding: 0;
+  text-decoration: none;
+}
+
+.custom-day-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.custom-day-header .day-name {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.custom-day-header .day-number {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* デフォルトでは下の青丸は非表示 */
+.custom-day-header .day-number::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #0ea5e9;
+  display: none;
+}
+
+/* 利用可能スロットがある日は背景に薄い青丸 */
+.custom-day-header .day-number.has-slots {
+  background-color: #dbeafe;
+  color: #0ea5e9;
+  border-radius: 50%;
+}
+
+/* 今日の日付のスタイル */
+.fc .fc-col-header-cell.fc-day-today {
+  background-color: #ffffff;
+}
+
+.custom-day-header .day-number.is-today {
+  background-color: #0ea5e9;
+  color: #ffffff;
+  border-radius: 50%;
+}
+
+/* 今日の日付のみ下に青丸を表示 */
+.custom-day-header .day-number.is-today::after {
+  display: block;
+}
+
+.fc .fc-col-header-cell.fc-day-today .custom-day-header .day-name {
+  color: #0ea5e9;
+}
+
+.fc .fc-daygrid-day-number {
+  color: #0ea5e9;
+  font-weight: 600;
+  padding: 8px;
+}
+
+/* タイムゾーンセレクタのスタイル */
+.fc .fc-timegrid-axis-cushion {
+  text-align: center;
+}
+
+/* タイムゾーンカラムのスタイル */
+.fc .fc-timegrid-axis {
+  background-color: #ffffff;
+}
+
+.fc .fc-timegrid-axis-frame {
+  justify-content: flex-start;
+  padding-left: 8px;
+}
+
+/* JSTラベル */
+.fc .fc-timegrid-slot-label-frame {
+  text-align: left;
+  padding-left: 12px;
+}
