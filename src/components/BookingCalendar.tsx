@@ -511,7 +511,13 @@ const BookingCalendar: React.FC = () => {
               timeGridThreeDay: {
                 type: 'timeGrid',
                 duration: { days: 3 },
-                dateIncrement: { days: 3 }
+                dateIncrement: { days: 3 },
+                visibleRange: (currentDate) => {
+                  const start = new Date(currentDate);
+                  const end = new Date(currentDate);
+                  end.setDate(end.getDate() + 3);
+                  return { start, end };
+                }
               }
             }}
             slotMinTime="08:00:00"
