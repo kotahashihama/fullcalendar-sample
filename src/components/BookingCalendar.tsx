@@ -90,7 +90,7 @@ const BookingCalendar: React.FC = () => {
     { id: 'movable-1', start: '2025-12-09T09:00:00', end: '2025-12-09T10:00:00', title: '予約枠', editable: true, className: 'movable-event' },
   ];
 
-  const handleEventClick = (info: any) => {
+  const handleEventClick = () => {
     // クリックハンドラーは不要
   };
 
@@ -372,7 +372,6 @@ const BookingCalendar: React.FC = () => {
         {dates.map((date, index) => {
           const dayOfWeek = ['日', '月', '火', '水', '木', '金', '土'][date.getDay()];
           const dayNumber = date.getDate();
-          const dateStr = date.toISOString().split('T')[0];
 
           // 今日かどうかチェック
           const checkDate = new Date(date);
