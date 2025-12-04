@@ -35,6 +35,10 @@ export const events: Event[] = [
   // 既存の予定（背景に表示）
   ...existingEvents,
 
+  // 終日イベント
+  { id: 'allday-1', start: '2025-12-09', end: '2025-12-09', title: '祝日', allDay: true, editable: false, className: 'existing-event allday-event user-1' },
+  { id: 'allday-2', start: '2025-12-11', end: '2025-12-11', title: '社内イベント', allDay: true, editable: false, className: 'existing-event allday-event user-2' },
+
   // 火曜日 12/9 の利用可能スロット（背景、移動不可）
   { id: '1', start: '2025-12-09T09:00:00', end: '2025-12-09T11:00:00', title: '9:00-11:00', editable: false, className: 'available-slot' },
   { id: '2', start: '2025-12-09T13:00:00', end: '2025-12-09T14:00:00', title: '13:00-14:00', editable: false, className: 'available-slot' },

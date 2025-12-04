@@ -11,8 +11,15 @@ interface EventModalProps {
 const EventModal: React.FC<EventModalProps> = ({ event, isOpen, onClose }) => {
   if (!isOpen || !event) return null;
 
-  const formatDateTime = (dateString: string) => {
+  const formatDateTime = (dateString: string, isAllDay: boolean) => {
     const date = new Date(dateString);
+    if (isAllDay) {
+      return date.toLocaleDateString('ja-JP', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      });
+    }
     return date.toLocaleString('ja-JP', {
       year: 'numeric',
       month: '2-digit',
@@ -38,14 +45,22 @@ const EventModal: React.FC<EventModalProps> = ({ event, isOpen, onClose }) => {
           </button>
         </div>
         <div className="modal-body">
+          {event.allDay && (
+            <div className="modal-info-item">
+              <span className="modal-info-label">終日</span>
+              <span className="modal-info-value">はい</span>
+            </div>
+          )}
           <div className="modal-info-item">
-            <span className="modal-info-label">開始時刻</span>
-            <span className="modal-info-value">{formatDateTime(event.start)}</span>
+            <span className="modal-info-label">{event.allDay ? '日付' : '開始時刻'}</span>
+            <span className="modal-info-value">{formatDateTime(event.start, event.allDay || false)}</span>
           </div>
-          <div className="modal-info-item">
-            <span className="modal-info-label">終了時刻</span>
-            <span className="modal-info-value">{formatDateTime(event.end)}</span>
-          </div>
+          {!event.allDay && (
+            <div className="modal-info-item">
+              <span className="modal-info-label">終了時刻</span>
+              <span className="modal-info-value">{formatDateTime(event.end, false)}</span>
+            </div>
+          )}
           {event.id && (
             <div className="modal-info-item">
               <span className="modal-info-label">ID</span>

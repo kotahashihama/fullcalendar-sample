@@ -44,7 +44,8 @@ const SlotSelect: React.FC = () => {
         start: clickedEvent.startStr,
         end: clickedEvent.endStr,
         title: clickedEvent.title,
-        className: classNames.join(' ')
+        className: classNames.join(' '),
+        allDay: clickedEvent.allDay
       };
 
       setSelectedEvent(event);

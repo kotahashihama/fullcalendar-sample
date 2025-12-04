@@ -111,7 +111,7 @@ const CalendarView = forwardRef<CalendarViewRef, CalendarViewProps>(
               info.el.classList.add('striped-day');
             }
           }}
-          allDaySlot={false}
+          allDaySlot={true}
           dayHeaderContent={() => null}
           slotLabelFormat={{
             hour: 'numeric',

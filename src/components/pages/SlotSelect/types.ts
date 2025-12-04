@@ -6,6 +6,7 @@ export interface Event {
   display?: string;
   editable?: boolean;
   className?: string;
+  allDay?: boolean;
 }
 
 export type ViewType = 'timeGridWeek' | 'timeGridThreeDay' | 'timeGridDay';
