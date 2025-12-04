@@ -215,6 +215,46 @@
   color: #831843;
 }
 
+/* ユーザー5の予定（青） */
+.fc-event.existing-event.user-5 {
+  background-color: rgba(96, 165, 250, 0.3);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.fc-event.existing-event.user-5 .fc-event-main {
+  color: #1e40af;
+}
+
+/* ユーザー6の予定（赤） */
+.fc-event.existing-event.user-6 {
+  background-color: rgba(248, 113, 113, 0.3);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.fc-event.existing-event.user-6 .fc-event-main {
+  color: #991b1b;
+}
+
+/* ユーザー7の予定（黄） */
+.fc-event.existing-event.user-7 {
+  background-color: rgba(251, 191, 36, 0.3);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.fc-event.existing-event.user-7 .fc-event-main {
+  color: #92400e;
+}
+
+/* ユーザー8の予定（シアン） */
+.fc-event.existing-event.user-8 {
+  background-color: rgba(103, 232, 249, 0.3);
+  border: 1px solid rgba(34, 211, 238, 0.4);
+}
+
+.fc-event.existing-event.user-8 .fc-event-main {
+  color: #155e75;
+}
+
 /* z-indexの優先度を設定 */
 .fc-event.existing-event {
   z-index: 1;
@@ -361,6 +401,46 @@ td.fc-timegrid-col.striped-day::before {
 
 .fc-event.allday-event.user-4 .fc-event-main {
   color: #831843;
+}
+
+/* 終日イベント - ユーザー5（青） */
+.fc-event.allday-event.user-5 {
+  background-color: rgba(96, 165, 250, 0.3);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.fc-event.allday-event.user-5 .fc-event-main {
+  color: #1e40af;
+}
+
+/* 終日イベント - ユーザー6（赤） */
+.fc-event.allday-event.user-6 {
+  background-color: rgba(248, 113, 113, 0.3);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.fc-event.allday-event.user-6 .fc-event-main {
+  color: #991b1b;
+}
+
+/* 終日イベント - ユーザー7（黄） */
+.fc-event.allday-event.user-7 {
+  background-color: rgba(251, 191, 36, 0.3);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.fc-event.allday-event.user-7 .fc-event-main {
+  color: #92400e;
+}
+
+/* 終日イベント - ユーザー8（シアン） */
+.fc-event.allday-event.user-8 {
+  background-color: rgba(103, 232, 249, 0.3);
+  border: 1px solid rgba(34, 211, 238, 0.4);
+}
+
+.fc-event.allday-event.user-8 .fc-event-main {
+  color: #155e75;
 }
 
 /* 終日スロットのラベルスタイル */

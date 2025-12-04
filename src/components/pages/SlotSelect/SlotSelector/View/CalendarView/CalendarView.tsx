@@ -39,10 +39,20 @@ const CalendarView = forwardRef<CalendarViewRef, CalendarViewProps>(
           key={currentView}
           headerToolbar={false}
           views={{
+            timeGridWeek: {
+              dayMaxEvents: 6,
+              eventMaxStack: 6
+            },
+            timeGridDay: {
+              dayMaxEvents: 6,
+              eventMaxStack: 6
+            },
             timeGridThreeDay: {
               type: 'timeGrid',
               duration: { days: 3 },
               dateIncrement: { days: 3 },
+              dayMaxEvents: 6,
+              eventMaxStack: 6,
               visibleRange: (currentDate) => {
                 const start = new Date(currentDate);
                 const end = new Date(currentDate);
@@ -112,6 +122,8 @@ const CalendarView = forwardRef<CalendarViewRef, CalendarViewProps>(
             }
           }}
           allDaySlot={true}
+          dayMaxEvents={6}
+          moreLinkClick="popover"
           dayHeaderContent={() => null}
           slotLabelFormat={{
             hour: 'numeric',
