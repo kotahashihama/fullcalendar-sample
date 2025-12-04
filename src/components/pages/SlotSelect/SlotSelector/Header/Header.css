@@ -1,0 +1,81 @@
+/* 共通の日付ヘッダー */
+.common-day-headers {
+  display: grid;
+  gap: 0;
+  margin-bottom: 0;
+  border-bottom: 2px solid #e5e7eb;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-bottom: 2px solid #e5e7eb;
+  border-radius: 6px 6px 0 0;
+}
+
+/* 日付ヘッダーのカラム数をビューに応じて変更 */
+.common-day-headers {
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+
+/* カレンダービューの場合、時刻ラベルの幅分だけ左側にパディングを追加 */
+.common-day-headers.calendar-mode {
+  padding-left: 46px;
+}
+
+.common-day-header-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 8px;
+  gap: 6px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.common-day-header-cell:last-child {
+  border-right: none;
+}
+
+.common-day-name {
+  font-size: 11px;
+  color: #9ca3af;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.common-day-number {
+  font-size: 14px;
+  font-weight: 400;
+  color: #374151;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.common-day-number.has-slots {
+  background-color: #e0f2fe;
+  color: #0284c7;
+  font-weight: 600;
+}
+
+/* 今日の日付のスタイル */
+.common-day-number.is-today {
+  background-color: #0284c7;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 今日の日付の下に青丸を表示 */
+.common-day-number.is-today::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #0284c7;
+}

@@ -1,7 +1,7 @@
-import BookingCalendar from './components/BookingCalendar';
+import SlotSelect from './components/pages/SlotSelect/SlotSelect';
 
 function App() {
-  return <BookingCalendar />;
+  return <SlotSelect />;
 }
 
 export default App;

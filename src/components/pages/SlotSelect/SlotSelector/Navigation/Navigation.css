@@ -1,0 +1,119 @@
+/* 共通のカレンダーヘッダー */
+.common-calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.common-calendar-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.common-calendar-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.common-control-button {
+  padding: 4px 8px;
+  background-color: #ffffff;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.common-control-button:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.common-nav-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.common-nav-button {
+  padding: 4px 10px;
+  background-color: #ffffff;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.common-nav-button:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.common-today-button {
+  padding: 4px 12px;
+  background-color: #ffffff;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  height: 32px;
+}
+
+.common-today-button:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+/* カレンダー内のビュー選択ドロップダウン */
+.calendar-view-dropdown-menu {
+  position: absolute;
+  top: 60px;
+  right: 140px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  min-width: 120px;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.view-dropdown-item {
+  width: 100%;
+  padding: 8px 16px;
+  text-align: left;
+  background-color: #ffffff;
+  border: none;
+  color: #374151;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: block;
+}
+
+.view-dropdown-item:hover {
+  background-color: #f9fafb;
+}
+
+.view-dropdown-item.active {
+  background-color: #eff6ff;
+  color: #0ea5e9;
+  font-weight: 600;
+}

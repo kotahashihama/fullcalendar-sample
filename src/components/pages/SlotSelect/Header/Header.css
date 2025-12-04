@@ -1,0 +1,80 @@
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.calendar-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.calendar-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.control-button {
+  padding: 6px 14px;
+  font-size: 13px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  color: #6b7280;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.control-button:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.control-button.active {
+  background-color: #0ea5e9;
+  color: #ffffff;
+  border-color: #0ea5e9;
+}
+
+.login-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background-color: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  font-size: 12px;
+  color: #1e40af;
+  line-height: 1.5;
+}
+
+.info-icon-blue {
+  width: 18px;
+  height: 18px;
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+.login-button {
+  margin-left: auto;
+  padding: 6px 14px;
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+}
+
+.login-button:hover {
+  background-color: #0369a1;
+}

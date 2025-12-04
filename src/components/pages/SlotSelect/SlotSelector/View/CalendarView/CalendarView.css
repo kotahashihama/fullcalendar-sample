@@ -1,0 +1,318 @@
+.calendar-wrapper {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  padding: 0;
+  box-shadow: none;
+  position: relative;
+}
+
+/* FullCalendar カスタマイズ */
+.fc {
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.fc .fc-button {
+  padding: 5px 10px;
+  background-color: #ffffff;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+  text-transform: none;
+}
+
+.fc .fc-button:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.fc .fc-button:disabled {
+  opacity: 0.5;
+}
+
+.fc .fc-button:focus {
+  box-shadow: none;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+  background-color: #0ea5e9;
+  border-color: #0ea5e9;
+  color: #ffffff;
+}
+
+.fc .fc-col-header-cell {
+  display: none;
+}
+
+.fc .fc-timegrid-slot {
+  height: 48px;
+  border-color: #f3f4f6;
+}
+
+.fc .fc-timegrid-slot-label {
+  color: #9ca3af;
+  font-size: 12px;
+  font-weight: 400;
+  vertical-align: top;
+  padding-top: 4px;
+}
+
+.fc .fc-scrollgrid {
+  border-color: #e5e7eb;
+}
+
+.fc .fc-scrollgrid td,
+.fc .fc-scrollgrid th {
+  border-color: #e5e7eb;
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border-color: #e5e7eb;
+}
+
+.fc-theme-standard .fc-scrollgrid {
+  border-color: #e5e7eb;
+}
+
+.fc .fc-timegrid-divider {
+  display: none;
+}
+
+.fc .fc-day-today {
+  background-color: transparent;
+}
+
+.fc .fc-day-today .fc-col-header-cell-cushion {
+  color: #0ea5e9;
+  font-weight: 600;
+}
+
+/* 利用可能スロットのスタイリング（背景） */
+.fc-event.available-slot {
+  background-color: #f0f9ff;
+  border: 1.5px dashed #7dd3fc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.fc-event.available-slot:hover {
+  background-color: #e0f2fe;
+  border-color: #38bdf8;
+}
+
+.fc-event.available-slot .fc-event-main {
+  color: #0284c7;
+  font-weight: 400;
+  padding: 6px 8px;
+  font-size: 11px;
+}
+
+/* 移動可能なイベントのスタイリング */
+.fc-event.movable-event {
+  background-color: #0284c7;
+  border: 1px solid #0369a1;
+  border-radius: 6px;
+  cursor: move;
+  transition: all 0.2s;
+  z-index: 10;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+}
+
+.fc-event.movable-event:hover {
+  background-color: #0369a1;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.15), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.fc-event.movable-event .fc-event-main {
+  color: #ffffff;
+  font-weight: 500;
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* 移動可能なイベントのハーネスを100%幅に */
+.fc-timegrid-event.movable-event {
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.fc-timegrid-event-harness:has(.movable-event),
+.fc-timegrid-event-harness.movable-event-harness {
+  left: 0;
+  right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* FullCalendarが自動で付与する位置スタイルを上書き */
+.fc .fc-timegrid-event.movable-event {
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+}
+
+/* 既存の予定のスタイリング（背景に表示） */
+.fc-event.existing-event {
+  border-radius: 4px;
+  cursor: default;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.fc-event.existing-event .fc-event-main {
+  font-weight: 400;
+  padding: 4px 6px;
+  font-size: 11px;
+}
+
+/* ユーザー1の予定（紫） */
+.fc-event.existing-event.user-1 {
+  background-color: rgba(167, 139, 250, 0.3);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+}
+
+.fc-event.existing-event.user-1 .fc-event-main {
+  color: #6b21a8;
+}
+
+/* ユーザー2の予定（緑） */
+.fc-event.existing-event.user-2 {
+  background-color: rgba(134, 239, 172, 0.3);
+  border: 1px solid rgba(74, 222, 128, 0.4);
+}
+
+.fc-event.existing-event.user-2 .fc-event-main {
+  color: #166534;
+}
+
+/* ユーザー3の予定（オレンジ） */
+.fc-event.existing-event.user-3 {
+  background-color: rgba(253, 186, 116, 0.3);
+  border: 1px solid rgba(251, 146, 60, 0.4);
+}
+
+.fc-event.existing-event.user-3 .fc-event-main {
+  color: #9a3412;
+}
+
+/* ユーザー4の予定（ピンク） */
+.fc-event.existing-event.user-4 {
+  background-color: rgba(244, 114, 182, 0.3);
+  border: 1px solid rgba(236, 72, 153, 0.4);
+}
+
+.fc-event.existing-event.user-4 .fc-event-main {
+  color: #831843;
+}
+
+/* z-indexの優先度を設定 */
+.fc-event.existing-event {
+  z-index: 1;
+}
+
+.fc-event.available-slot {
+  z-index: 5;
+}
+
+.fc-event.movable-event {
+  z-index: 10;
+}
+
+.fc-event-main {
+  color: #1e40af;
+  font-weight: 500;
+  padding: 4px;
+}
+
+/* 利用不可能な時間帯（斜線パターン） - 曜日ごとに設定 */
+.fc-timegrid-col.striped-day,
+.fc-timegrid-col-bg .striped-day {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 8px,
+    rgba(0, 0, 0, 0.02) 8px,
+    rgba(0, 0, 0, 0.02) 16px
+  );
+}
+
+/* TimeGrid内の日セルに斜線を追加 */
+td.fc-timegrid-col.striped-day {
+  position: relative;
+}
+
+td.fc-timegrid-col.striped-day::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 8px,
+    rgba(0, 0, 0, 0.025) 8px,
+    rgba(0, 0, 0, 0.025) 16px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fc-timegrid-event-harness {
+  margin-right: 2px;
+}
+
+/* 日付ヘッダーのカスタマイズ */
+.fc .fc-col-header-cell {
+  border-bottom: 2px solid #e5e7eb;
+  padding: 16px 8px;
+}
+
+.fc .fc-col-header-cell-cushion {
+  padding: 0;
+  text-decoration: none;
+}
+
+.fc .fc-daygrid-day-number {
+  color: #0ea5e9;
+  font-weight: 600;
+  padding: 8px;
+}
+
+/* タイムゾーンセレクタのスタイル */
+.fc .fc-timegrid-axis-cushion {
+  text-align: center;
+}
+
+/* タイムゾーンカラムのスタイル */
+.fc .fc-timegrid-axis {
+  background-color: #ffffff;
+}
+
+.fc .fc-timegrid-axis-frame {
+  justify-content: flex-start;
+  padding-left: 8px;
+}
+
+/* JSTラベル */
+.fc .fc-timegrid-slot-label-frame {
+  text-align: left;
+  padding-left: 12px;
+}
