@@ -566,6 +566,7 @@ const BookingCalendar: React.FC = () => {
             eventDrop={handleEventDrop}
             eventResize={handleEventResize}
             slotEventOverlap={false}
+            nowIndicator={true}
             eventClassNames={(arg) => {
               return arg.event.extendedProps.className || [];
             }}
