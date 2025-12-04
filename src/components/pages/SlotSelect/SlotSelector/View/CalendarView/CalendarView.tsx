@@ -70,7 +70,7 @@ const CalendarView = forwardRef<CalendarViewRef, CalendarViewProps>(
           eventClick={onEventClick}
           eventDrop={onEventDrop}
           eventResize={onEventResize}
-          slotEventOverlap={false}
+          slotEventOverlap={true}
           nowIndicator={true}
           eventClassNames={(arg) => {
             return arg.event.extendedProps.className || [];

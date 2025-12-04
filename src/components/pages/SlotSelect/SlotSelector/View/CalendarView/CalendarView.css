@@ -166,7 +166,6 @@
   border-radius: 4px;
   cursor: default;
   z-index: 1;
-  opacity: 0.8;
 }
 
 .fc-event.existing-event .fc-event-main {
@@ -177,18 +176,18 @@
 
 /* ユーザー1の予定（紫） */
 .fc-event.existing-event.user-1 {
-  background-color: rgba(167, 139, 250, 0.3);
-  border: 1px solid rgba(139, 92, 246, 0.4);
+  background-color: rgba(167, 139, 250, 1.0);
+  border: 1px solid rgba(139, 92, 246, 1.0);
 }
 
 .fc-event.existing-event.user-1 .fc-event-main {
-  color: #6b21a8;
+  color: #ffffff;
 }
 
 /* ユーザー2の予定（緑） */
 .fc-event.existing-event.user-2 {
-  background-color: rgba(134, 239, 172, 0.3);
-  border: 1px solid rgba(74, 222, 128, 0.4);
+  background-color: rgba(134, 239, 172, 1.0);
+  border: 1px solid rgba(74, 222, 128, 1.0);
 }
 
 .fc-event.existing-event.user-2 .fc-event-main {
@@ -197,8 +196,8 @@
 
 /* ユーザー3の予定（オレンジ） */
 .fc-event.existing-event.user-3 {
-  background-color: rgba(253, 186, 116, 0.3);
-  border: 1px solid rgba(251, 146, 60, 0.4);
+  background-color: rgba(253, 186, 116, 1.0);
+  border: 1px solid rgba(251, 146, 60, 1.0);
 }
 
 .fc-event.existing-event.user-3 .fc-event-main {
@@ -207,8 +206,8 @@
 
 /* ユーザー4の予定（ピンク） */
 .fc-event.existing-event.user-4 {
-  background-color: rgba(244, 114, 182, 0.3);
-  border: 1px solid rgba(236, 72, 153, 0.4);
+  background-color: rgba(244, 114, 182, 1.0);
+  border: 1px solid rgba(236, 72, 153, 1.0);
 }
 
 .fc-event.existing-event.user-4 .fc-event-main {
@@ -217,28 +216,28 @@
 
 /* ユーザー5の予定（青） */
 .fc-event.existing-event.user-5 {
-  background-color: rgba(96, 165, 250, 0.3);
-  border: 1px solid rgba(59, 130, 246, 0.4);
+  background-color: rgba(96, 165, 250, 1.0);
+  border: 1px solid rgba(59, 130, 246, 1.0);
 }
 
 .fc-event.existing-event.user-5 .fc-event-main {
-  color: #1e40af;
+  color: #ffffff;
 }
 
 /* ユーザー6の予定（赤） */
 .fc-event.existing-event.user-6 {
-  background-color: rgba(248, 113, 113, 0.3);
-  border: 1px solid rgba(239, 68, 68, 0.4);
+  background-color: rgba(248, 113, 113, 1.0);
+  border: 1px solid rgba(239, 68, 68, 1.0);
 }
 
 .fc-event.existing-event.user-6 .fc-event-main {
-  color: #991b1b;
+  color: #ffffff;
 }
 
 /* ユーザー7の予定（黄） */
 .fc-event.existing-event.user-7 {
-  background-color: rgba(251, 191, 36, 0.3);
-  border: 1px solid rgba(245, 158, 11, 0.4);
+  background-color: rgba(251, 191, 36, 1.0);
+  border: 1px solid rgba(245, 158, 11, 1.0);
 }
 
 .fc-event.existing-event.user-7 .fc-event-main {
@@ -247,8 +246,8 @@
 
 /* ユーザー8の予定（シアン） */
 .fc-event.existing-event.user-8 {
-  background-color: rgba(103, 232, 249, 0.3);
-  border: 1px solid rgba(34, 211, 238, 0.4);
+  background-color: rgba(103, 232, 249, 1.0);
+  border: 1px solid rgba(34, 211, 238, 1.0);
 }
 
 .fc-event.existing-event.user-8 .fc-event-main {
@@ -365,18 +364,18 @@ td.fc-timegrid-col.striped-day::before {
 
 /* 終日イベント - ユーザー1（紫） */
 .fc-event.allday-event.user-1 {
-  background-color: rgba(167, 139, 250, 0.3);
-  border: 1px solid rgba(139, 92, 246, 0.4);
+  background-color: rgba(167, 139, 250, 1.0);
+  border: 1px solid rgba(139, 92, 246, 1.0);
 }
 
 .fc-event.allday-event.user-1 .fc-event-main {
-  color: #6b21a8;
+  color: #ffffff;
 }
 
 /* 終日イベント - ユーザー2（緑） */
 .fc-event.allday-event.user-2 {
-  background-color: rgba(134, 239, 172, 0.3);
-  border: 1px solid rgba(74, 222, 128, 0.4);
+  background-color: rgba(134, 239, 172, 1.0);
+  border: 1px solid rgba(74, 222, 128, 1.0);
 }
 
 .fc-event.allday-event.user-2 .fc-event-main {
@@ -385,8 +384,8 @@ td.fc-timegrid-col.striped-day::before {
 
 /* 終日イベント - ユーザー3（オレンジ） */
 .fc-event.allday-event.user-3 {
-  background-color: rgba(253, 186, 116, 0.3);
-  border: 1px solid rgba(251, 146, 60, 0.4);
+  background-color: rgba(253, 186, 116, 1.0);
+  border: 1px solid rgba(251, 146, 60, 1.0);
 }
 
 .fc-event.allday-event.user-3 .fc-event-main {
@@ -395,8 +394,8 @@ td.fc-timegrid-col.striped-day::before {
 
 /* 終日イベント - ユーザー4（ピンク） */
 .fc-event.allday-event.user-4 {
-  background-color: rgba(244, 114, 182, 0.3);
-  border: 1px solid rgba(236, 72, 153, 0.4);
+  background-color: rgba(244, 114, 182, 1.0);
+  border: 1px solid rgba(236, 72, 153, 1.0);
 }
 
 .fc-event.allday-event.user-4 .fc-event-main {
@@ -405,28 +404,28 @@ td.fc-timegrid-col.striped-day::before {
 
 /* 終日イベント - ユーザー5（青） */
 .fc-event.allday-event.user-5 {
-  background-color: rgba(96, 165, 250, 0.3);
-  border: 1px solid rgba(59, 130, 246, 0.4);
+  background-color: rgba(96, 165, 250, 1.0);
+  border: 1px solid rgba(59, 130, 246, 1.0);
 }
 
 .fc-event.allday-event.user-5 .fc-event-main {
-  color: #1e40af;
+  color: #ffffff;
 }
 
 /* 終日イベント - ユーザー6（赤） */
 .fc-event.allday-event.user-6 {
-  background-color: rgba(248, 113, 113, 0.3);
-  border: 1px solid rgba(239, 68, 68, 0.4);
+  background-color: rgba(248, 113, 113, 1.0);
+  border: 1px solid rgba(239, 68, 68, 1.0);
 }
 
 .fc-event.allday-event.user-6 .fc-event-main {
-  color: #991b1b;
+  color: #ffffff;
 }
 
 /* 終日イベント - ユーザー7（黄） */
 .fc-event.allday-event.user-7 {
-  background-color: rgba(251, 191, 36, 0.3);
-  border: 1px solid rgba(245, 158, 11, 0.4);
+  background-color: rgba(251, 191, 36, 1.0);
+  border: 1px solid rgba(245, 158, 11, 1.0);
 }
 
 .fc-event.allday-event.user-7 .fc-event-main {
@@ -435,8 +434,8 @@ td.fc-timegrid-col.striped-day::before {
 
 /* 終日イベント - ユーザー8（シアン） */
 .fc-event.allday-event.user-8 {
-  background-color: rgba(103, 232, 249, 0.3);
-  border: 1px solid rgba(34, 211, 238, 0.4);
+  background-color: rgba(103, 232, 249, 1.0);
+  border: 1px solid rgba(34, 211, 238, 1.0);
 }
 
 .fc-event.allday-event.user-8 .fc-event-main {
