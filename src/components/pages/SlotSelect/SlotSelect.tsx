@@ -5,8 +5,10 @@ import Navigation from './SlotSelector/Navigation/Navigation';
 import SlotSelectorHeader from './SlotSelector/Header/Header';
 import CalendarView, { CalendarViewRef } from './SlotSelector/View/CalendarView/CalendarView';
 import ListView from './SlotSelector/View/ListView/ListView';
-import { ViewType, ViewMode } from './types';
+import EventModal from './Modal/EventModal';
+import { ViewType, ViewMode, Event } from './types';
 import { events } from './eventsData';
+import { EventClickArg } from '@fullcalendar/core';
 import './SlotSelect.css';
 
 const SlotSelect: React.FC = () => {
@@ -15,6 +17,8 @@ const SlotSelect: React.FC = () => {
   const [showViewMenu, setShowViewMenu] = useState(false);
   const [viewMode, setViewMode] = useState<ViewMode>('calendar');
   const [currentDate, setCurrentDate] = useState<Date>(new Date('2025-12-07'));
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
   // viewModeやcurrentDateが変更されたときにカレンダーの日付を同期
   useEffect(() => {
@@ -29,8 +33,28 @@ const SlotSelect: React.FC = () => {
     }
   }, [currentDate, viewMode]);
 
-  const handleEventClick = () => {
-    // クリックハンドラーは不要
+  const handleEventClick = (info: EventClickArg) => {
+    const clickedEvent = info.event;
+    const classNames = clickedEvent.classNames;
+
+    // existing-eventのみモーダルを表示
+    if (classNames.some(className => className.includes('existing-event'))) {
+      const event: Event = {
+        id: clickedEvent.id,
+        start: clickedEvent.startStr,
+        end: clickedEvent.endStr,
+        title: clickedEvent.title,
+        className: classNames.join(' ')
+      };
+
+      setSelectedEvent(event);
+      setIsModalOpen(true);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedEvent(null);
   };
 
   const handleEventDrop = (info: unknown) => {
@@ -234,6 +258,12 @@ const SlotSelect: React.FC = () => {
           <ListView events={events} currentDate={currentDate} currentView={currentView} />
         )}
       </div>
+
+      <EventModal
+        event={selectedEvent}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </div>
   );
 };

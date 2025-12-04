@@ -3,6 +3,7 @@ import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import jaLocale from '@fullcalendar/core/locales/ja';
+import { EventClickArg } from '@fullcalendar/core';
 import { Event, ViewType } from '../../../types';
 import './CalendarView.css';
 
@@ -10,7 +11,7 @@ interface CalendarViewProps {
   events: Event[];
   currentDate: Date;
   currentView: ViewType;
-  onEventClick: () => void;
+  onEventClick: (info: EventClickArg) => void;
   onEventDrop: (info: unknown) => void;
   onEventResize: (info: unknown) => void;
 }
