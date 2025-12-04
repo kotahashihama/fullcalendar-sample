@@ -17,3 +17,13 @@
   padding: 32px 48px;
   background-color: #ffffff;
 }
+
+@media screen and (max-width: 768px) {
+  .booking-container {
+    flex-direction: column;
+  }
+
+  .booking-main {
+    padding: 16px;
+  }
+}

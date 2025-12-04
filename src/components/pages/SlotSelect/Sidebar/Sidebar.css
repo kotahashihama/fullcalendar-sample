@@ -66,3 +66,12 @@
   background-color: #f9fafb;
   border-color: #9ca3af;
 }
+
+@media screen and (max-width: 768px) {
+  .booking-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px;
+  }
+}
