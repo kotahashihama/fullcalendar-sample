@@ -1,10 +1,12 @@
 .booking-sidebar {
   width: 320px;
+  height: 100vh;
   padding: 32px 24px;
   background-color: #fafafa;
   border-right: 1px solid #e5e7eb;
   display: flex;
   flex-direction: column;
+  overflow-y: hidden;
 }
 
 .booking-title {
@@ -70,8 +72,10 @@
 @media screen and (max-width: 768px) {
   .booking-sidebar {
     width: 100%;
+    height: auto;
     border-right: none;
     border-bottom: 1px solid #e5e7eb;
     padding: 16px;
+    overflow-y: visible;
   }
 }

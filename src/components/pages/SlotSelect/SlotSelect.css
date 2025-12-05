@@ -6,7 +6,7 @@
 
 .booking-container {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -17,15 +17,20 @@
   padding: 32px 48px;
   background-color: #ffffff;
   min-width: 0;
-  overflow: auto;
+  overflow-y: auto;
+  height: 100vh;
 }
 
 @media screen and (max-width: 768px) {
   .booking-container {
     flex-direction: column;
+    height: auto;
+    min-height: 100vh;
   }
 
   .booking-main {
     padding: 16px;
+    height: auto;
+    overflow-y: visible;
   }
 }
