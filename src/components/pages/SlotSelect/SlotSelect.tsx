@@ -4,7 +4,7 @@ import Header from './Header/Header';
 import SlotSelectorHeader from './SlotSelector/Header/Header';
 import CalendarView, { CalendarViewRef } from './SlotSelector/View/CalendarView/CalendarView';
 import ListView from './SlotSelector/View/ListView/ListView';
-import EventModal from './Modal/EventModal';
+import EventModal from './EventModal/EventModal';
 import CalendarSettings from './CalendarSettings/CalendarSettings';
 import { ViewType, ViewMode, Event } from './types';
 import { events, users } from './eventsData';
