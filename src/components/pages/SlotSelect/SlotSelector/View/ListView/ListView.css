@@ -16,7 +16,7 @@
 .list-view-day-column {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 12px;
   padding: 16px 12px;
   border-right: 1px solid #e5e7eb;
 }
@@ -25,10 +25,39 @@
   border-right: none;
 }
 
+.list-view-day-header {
+  display: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
 .list-view-slots {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+/* 768px以下でのレスポンシブ対応 */
+@media (max-width: 768px) {
+  .list-view-content {
+    grid-template-columns: 1fr;
+  }
+
+  .list-view-day-column {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .list-view-day-column:last-child {
+    border-bottom: none;
+  }
+
+  .list-view-day-header {
+    display: block;
+  }
 }
 
 .list-slot-button {

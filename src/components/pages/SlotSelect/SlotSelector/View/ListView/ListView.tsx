@@ -72,6 +72,12 @@ const ListView: React.FC<ListViewProps> = ({ events, currentDate, currentView })
   const slotsByDate = getAvailableSlotsByDate();
   const weekDates = getWeekDates();
 
+  // 曜日を取得
+  const getDayOfWeek = (date: Date): string => {
+    const days = ['日', '月', '火', '水', '木', '金', '土'];
+    return days[date.getDay()];
+  };
+
   return (
     <div className="list-view">
       <div className="list-view-content">
@@ -82,9 +88,13 @@ const ListView: React.FC<ListViewProps> = ({ events, currentDate, currentView })
           const day = String(date.getDate()).padStart(2, '0');
           const dateStr = `${year}-${month}-${day}`;
           const hasSlots = slotsByDate[dateStr] && slotsByDate[dateStr].length > 0;
+          const dayOfWeek = getDayOfWeek(date);
 
           return (
             <div key={index} className="list-view-day-column">
+              <div className="list-view-day-header">
+                {parseInt(day)}日({dayOfWeek})
+              </div>
               <div className="list-view-slots">
                 {hasSlots ? (
                   slotsByDate[dateStr].map((slot, slotIndex) => (
