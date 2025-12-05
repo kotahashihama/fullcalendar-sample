@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({ viewMode, onViewModeChange }) => {
       <div className="calendar-header">
         <h3 className="calendar-title">日程を選択してください</h3>
         <div className="calendar-controls">
-          <button className="control-button">日本標準時間 ▼</button>
+          <button className="control-button timezone-button">日本標準時間 ▼</button>
           <button
             className={`control-button ${viewMode === 'list' ? 'active' : ''}`}
             onClick={() => onViewModeChange('list')}

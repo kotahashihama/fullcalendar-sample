@@ -78,4 +78,8 @@
     padding: 16px;
     overflow-y: visible;
   }
+
+  .language-selector {
+    display: none;
+  }
 }

@@ -313,6 +313,13 @@ const SlotSelect: React.FC = () => {
         isOpen={isModalOpen}
         onClose={handleCloseModal}
       />
+
+      <div className="mobile-settings-footer">
+        <div className="mobile-settings-container">
+          <button className="mobile-settings-button">日本標準時間 ▼</button>
+          <button className="mobile-settings-button">日本語 ▼</button>
+        </div>
+      </div>
     </div>
   );
 };
