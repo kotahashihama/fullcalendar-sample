@@ -117,3 +117,22 @@
   color: #0ea5e9;
   font-weight: 600;
 }
+
+/* カレンダー設定ボタン */
+.calendar-settings-button {
+  padding: 4px 12px;
+  background-color: #ffffff;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  height: 32px;
+}
+
+.calendar-settings-button:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+}

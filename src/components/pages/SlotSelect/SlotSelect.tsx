@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import Sidebar from './Sidebar/Sidebar';
 import Header from './Header/Header';
 import Navigation from './SlotSelector/Navigation/Navigation';
@@ -6,8 +6,9 @@ import SlotSelectorHeader from './SlotSelector/Header/Header';
 import CalendarView, { CalendarViewRef } from './SlotSelector/View/CalendarView/CalendarView';
 import ListView from './SlotSelector/View/ListView/ListView';
 import EventModal from './Modal/EventModal';
+import CalendarSettings from './CalendarSettings/CalendarSettings';
 import { ViewType, ViewMode, Event } from './types';
-import { events } from './eventsData';
+import { events, users } from './eventsData';
 import { EventClickArg } from '@fullcalendar/core';
 import './SlotSelect.css';
 
@@ -19,6 +20,43 @@ const SlotSelect: React.FC = () => {
   const [currentDate, setCurrentDate] = useState<Date>(new Date('2025-12-07'));
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+  const [showCalendarSettings, setShowCalendarSettings] = useState(false);
+  const [visibleUsers, setVisibleUsers] = useState<Set<string>>(
+    new Set(users.map((user) => user.userClass))
+  );
+
+  // イベントのフィルタリング
+  const filteredEvents = useMemo(() => {
+    return events.filter((event) => {
+      // available-slot と movable-event は常に表示
+      if (event.className?.includes('available-slot') || event.className?.includes('movable-event')) {
+        return true;
+      }
+
+      // existing-event の場合、ユーザーの表示設定に従う
+      if (event.className?.includes('existing-event')) {
+        const userClass = users.find((user) =>
+          event.className?.includes(user.userClass)
+        )?.userClass;
+
+        return userClass ? visibleUsers.has(userClass) : true;
+      }
+
+      return true;
+    });
+  }, [visibleUsers]);
+
+  const handleToggleUser = (userClass: string) => {
+    setVisibleUsers((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(userClass)) {
+        newSet.delete(userClass);
+      } else {
+        newSet.add(userClass);
+      }
+      return newSet;
+    });
+  };
 
   // viewModeやcurrentDateが変更されたときにカレンダーの日付を同期
   useEffect(() => {
@@ -64,7 +102,7 @@ const SlotSelect: React.FC = () => {
     const newEnd = droppedEvent.end;
 
     // available-slotと重なっているかチェック
-    const overlapsWithAvailableSlot = events.some(event => {
+    const overlapsWithAvailableSlot = filteredEvents.some(event => {
       if (!event.className?.includes('available-slot')) return false;
 
       const slotStart = new Date(event.start);
@@ -86,7 +124,7 @@ const SlotSelect: React.FC = () => {
     const newEnd = resizedEvent.end;
 
     // available-slotと重なっているかチェック
-    const overlapsWithAvailableSlot = events.some(event => {
+    const overlapsWithAvailableSlot = filteredEvents.some(event => {
       if (!event.className?.includes('available-slot')) return false;
 
       const slotStart = new Date(event.start);
@@ -241,14 +279,15 @@ const SlotSelect: React.FC = () => {
           onToday={onToday}
           onViewChange={handleViewChange}
           onToggleViewMenu={() => setShowViewMenu(!showViewMenu)}
+          onToggleCalendarSettings={() => setShowCalendarSettings(!showCalendarSettings)}
         />
 
-        <SlotSelectorHeader dates={getHeaderDates()} events={events} viewMode={viewMode} />
+        <SlotSelectorHeader dates={getHeaderDates()} events={filteredEvents} viewMode={viewMode} />
 
         {viewMode === 'calendar' ? (
           <CalendarView
             ref={calendarRef}
-            events={events}
+            events={filteredEvents}
             currentDate={currentDate}
             currentView={currentView}
             onEventClick={handleEventClick}
@@ -256,7 +295,7 @@ const SlotSelect: React.FC = () => {
             onEventResize={handleEventResize}
           />
         ) : (
-          <ListView events={events} currentDate={currentDate} currentView={currentView} />
+          <ListView events={filteredEvents} currentDate={currentDate} currentView={currentView} />
         )}
       </div>
 
@@ -265,6 +304,15 @@ const SlotSelect: React.FC = () => {
         isOpen={isModalOpen}
         onClose={handleCloseModal}
       />
+
+      {showCalendarSettings && (
+        <CalendarSettings
+          users={users}
+          visibleUsers={visibleUsers}
+          onToggleUser={handleToggleUser}
+          onClose={() => setShowCalendarSettings(false)}
+        />
+      )}
     </div>
   );
 };

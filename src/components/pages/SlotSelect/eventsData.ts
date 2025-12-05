@@ -1,4 +1,16 @@
-import { Event } from './types';
+import { Event, User } from './types';
+
+// ユーザーデータ
+export const users: User[] = [
+  { id: '1', name: 'taro.yamada@gmail.com', email: 'taro.yamada@gmail.com', userClass: 'user-1' },
+  { id: '2', name: 'kenji.tanaka@gmail.com', email: 'kenji.tanaka@gmail.com', userClass: 'user-2' },
+  { id: '3', name: 'yuki.suzuki@gmail.com', email: 'yuki.suzuki@gmail.com', userClass: 'user-3' },
+  { id: '4', name: 'haruka.kobayashi@gmail.com', email: 'haruka.kobayashi@gmail.com', userClass: 'user-4' },
+  { id: '5', name: 'takeshi.ito@gmail.com', email: 'takeshi.ito@gmail.com', userClass: 'user-5' },
+  { id: '6', name: 'ayumi.nakamura@gmail.com', email: 'ayumi.nakamura@gmail.com', userClass: 'user-6' },
+  { id: '7', name: 'Hanako Sato', email: 'hanako.sato@example.com', userClass: 'user-7' },
+  { id: '8', name: 'Kazuki Watanabe', email: 'kazuki.watanabe@example.com', userClass: 'user-8' },
+];
 
 // 既存の予定データ（モック）
 export const existingEvents: Event[] = [

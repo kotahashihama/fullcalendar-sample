@@ -12,17 +12,20 @@ interface NavigationProps {
   onToday: () => void;
   onViewChange: (view: ViewType) => void;
   onToggleViewMenu: () => void;
+  onToggleCalendarSettings?: () => void;
 }
 
 const Navigation: React.FC<NavigationProps> = ({
   currentDate,
   currentView,
+  viewMode,
   showViewMenu,
   onPrev,
   onNext,
   onToday,
   onViewChange,
   onToggleViewMenu,
+  onToggleCalendarSettings,
 }) => {
   const yearMonth = currentDate.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long' });
 
@@ -48,9 +51,14 @@ const Navigation: React.FC<NavigationProps> = ({
             {getViewLabel()} ▼
           </button>
           <div className="common-nav-buttons">
+            <button className="common-today-button" onClick={onToday}>今日</button>
             <button className="common-nav-button" onClick={onPrev}>‹</button>
             <button className="common-nav-button" onClick={onNext}>›</button>
-            <button className="common-today-button" onClick={onToday}>今日</button>
+            {viewMode === 'calendar' && onToggleCalendarSettings && (
+              <button className="calendar-settings-button" onClick={onToggleCalendarSettings}>
+                カレンダー設定
+              </button>
+            )}
           </div>
         </div>
       </div>

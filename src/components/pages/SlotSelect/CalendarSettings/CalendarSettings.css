@@ -1,0 +1,171 @@
+.calendar-settings-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.calendar-settings-panel {
+  width: 400px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.calendar-settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.calendar-settings-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: #111827;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.close-button:hover {
+  background-color: #f3f4f6;
+}
+
+.calendar-settings-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 0;
+}
+
+.calendar-settings-section {
+  margin-bottom: 24px;
+}
+
+.calendar-settings-section h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 12px 0;
+  padding: 0 24px;
+}
+
+.team-header {
+  display: flex;
+  align-items: center;
+  padding: 8px 24px;
+  margin-bottom: 8px;
+}
+
+.team-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.calendar-settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 24px;
+  transition: background-color 0.2s;
+}
+
+.calendar-settings-item:hover {
+  background-color: #f9fafb;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-email,
+.user-name {
+  font-size: 14px;
+  color: #111827;
+}
+
+.user-status {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.visibility-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  transition: color 0.2s;
+  border-radius: 4px;
+}
+
+.visibility-toggle:hover {
+  background-color: #f3f4f6;
+}
+
+.visibility-toggle.visible {
+  color: #3b82f6;
+}
+
+.visibility-toggle.hidden {
+  color: #9ca3af;
+}
