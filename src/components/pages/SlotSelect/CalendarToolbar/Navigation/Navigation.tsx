@@ -1,5 +1,5 @@
 import React from 'react';
-import { ViewType, ViewMode } from '../../../types';
+import { ViewType, ViewMode } from '../../types';
 import './Navigation.css';
 
 interface NavigationProps {

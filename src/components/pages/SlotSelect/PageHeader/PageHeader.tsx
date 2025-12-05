@@ -1,13 +1,13 @@
 import React from 'react';
 import { ViewMode } from '../types';
-import './Header.css';
+import './PageHeader.css';
 
-interface HeaderProps {
+interface PageHeaderProps {
   viewMode: ViewMode;
   onViewModeChange: (mode: ViewMode) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ viewMode, onViewModeChange }) => {
+const PageHeader: React.FC<PageHeaderProps> = ({ viewMode, onViewModeChange }) => {
   return (
     <>
       <div className="calendar-header">
@@ -40,4 +40,4 @@ const Header: React.FC<HeaderProps> = ({ viewMode, onViewModeChange }) => {
   );
 };
 
-export default Header;
+export default PageHeader;

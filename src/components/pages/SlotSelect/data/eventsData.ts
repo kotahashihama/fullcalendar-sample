@@ -1,4 +1,4 @@
-import { Event, User } from './types';
+import { Event, User } from '../types';
 
 // ユーザーデータ
 export const users: User[] = [
@@ -13,7 +13,7 @@ export const users: User[] = [
 ];
 
 // 既存の予定データ（モック）
-export const existingEvents: Event[] = [
+const existingEvents: Event[] = [
   // ユーザー1の予定（紫）
   { id: 'existing-1', start: '2025-12-09T10:00:00', end: '2025-12-09T11:00:00', title: '会議A', editable: false, className: 'existing-event user-1' },
   { id: 'existing-2', start: '2025-12-09T14:00:00', end: '2025-12-09T15:00:00', title: 'MTG', editable: false, className: 'existing-event user-1' },

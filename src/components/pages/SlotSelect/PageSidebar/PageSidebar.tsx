@@ -1,7 +1,7 @@
 import React from 'react';
-import './Sidebar.css';
+import './PageSidebar.css';
 
-const Sidebar: React.FC = () => {
+const PageSidebar: React.FC = () => {
   return (
     <div className="booking-sidebar">
       <h2 className="booking-title">Spirご説明会</h2>
@@ -35,4 +35,4 @@ const Sidebar: React.FC = () => {
   );
 };
 
-export default Sidebar;
+export default PageSidebar;
