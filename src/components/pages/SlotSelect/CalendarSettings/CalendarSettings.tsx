@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { User } from '../types';
 import './CalendarSettings.css';
 
@@ -15,8 +15,20 @@ const CalendarSettings: React.FC<CalendarSettingsProps> = ({
   onToggleUser,
   onClose,
 }) => {
-  return (
-    <div className="calendar-settings-panel">
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const panelContent = (
+    <div className="calendar-settings-panel" onClick={(e) => isMobile && e.stopPropagation()}>
       <div className="calendar-settings-header">
         <h2>カレンダー設定</h2>
         <button className="close-button" onClick={onClose}>
@@ -93,6 +105,16 @@ const CalendarSettings: React.FC<CalendarSettingsProps> = ({
         </div>
     </div>
   );
+
+  if (isMobile) {
+    return (
+      <div className="calendar-settings-overlay" onClick={onClose}>
+        {panelContent}
+      </div>
+    );
+  }
+
+  return panelContent;
 };
 
 export default CalendarSettings;
