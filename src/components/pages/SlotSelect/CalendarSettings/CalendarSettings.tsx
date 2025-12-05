@@ -30,6 +30,7 @@ const CalendarSettings: React.FC<CalendarSettingsProps> = ({
             {users.filter((user, index) => index < 6).map((user) => (
               <div key={user.id} className="calendar-settings-item">
                 <div className="user-info">
+                  <div className={`user-color-chip ${user.userClass}`}></div>
                   <div className={`user-avatar ${user.userClass}`}>
                     <img src={`https://i.pravatar.cc/32?u=${user.email}`} alt={user.name} />
                   </div>
@@ -64,6 +65,7 @@ const CalendarSettings: React.FC<CalendarSettingsProps> = ({
             {users.filter((user, index) => index >= 6).map((user) => (
               <div key={user.id} className="calendar-settings-item">
                 <div className="user-info">
+                  <div className={`user-color-chip ${user.userClass}`}></div>
                   <div className={`user-avatar ${user.userClass}`}>
                     <img src={`https://i.pravatar.cc/32?u=${user.email}`} alt={user.name} />
                   </div>

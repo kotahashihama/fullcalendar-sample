@@ -94,6 +94,45 @@
   flex: 1;
 }
 
+.user-color-chip {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.user-color-chip.user-1 {
+  background-color: rgba(167, 139, 250, 1.0);
+}
+
+.user-color-chip.user-2 {
+  background-color: rgba(134, 239, 172, 1.0);
+}
+
+.user-color-chip.user-3 {
+  background-color: rgba(253, 186, 116, 1.0);
+}
+
+.user-color-chip.user-4 {
+  background-color: rgba(244, 114, 182, 1.0);
+}
+
+.user-color-chip.user-5 {
+  background-color: rgba(96, 165, 250, 1.0);
+}
+
+.user-color-chip.user-6 {
+  background-color: rgba(248, 113, 113, 1.0);
+}
+
+.user-color-chip.user-7 {
+  background-color: rgba(251, 191, 36, 1.0);
+}
+
+.user-color-chip.user-8 {
+  background-color: rgba(103, 232, 249, 1.0);
+}
+
 .user-avatar {
   width: 32px;
   height: 32px;
