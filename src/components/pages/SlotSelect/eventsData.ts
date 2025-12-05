@@ -176,7 +176,4 @@ export const events: Event[] = [
   // 土曜日 12/20 の利用可能スロット（背景、移動不可）
   { id: '27', start: '2025-12-20T10:00:00', end: '2025-12-20T12:00:00', title: '10:00-12:00', editable: false, className: 'available-slot' },
   { id: '28', start: '2025-12-20T13:00:00', end: '2025-12-20T15:00:00', title: '13:00-15:00', editable: false, className: 'available-slot' },
-
-  // 移動可能なイベント（最初のスロット内に配置）
-  { id: 'movable-1', start: '2025-12-09T09:00:00', end: '2025-12-09T10:00:00', title: '予約枠', editable: true, className: 'movable-event' },
 ];

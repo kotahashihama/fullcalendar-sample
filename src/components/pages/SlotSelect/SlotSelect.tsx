@@ -27,8 +27,8 @@ const SlotSelect: React.FC = () => {
   // イベントのフィルタリング
   const filteredEvents = useMemo(() => {
     return events.filter((event) => {
-      // available-slot と movable-event は常に表示
-      if (event.className?.includes('available-slot') || event.className?.includes('movable-event')) {
+      // available-slot は常に表示
+      if (event.className?.includes('available-slot')) {
         return true;
       }
 

@@ -75,28 +75,6 @@ const CalendarView = forwardRef<CalendarViewRef, CalendarViewProps>(
           eventClassNames={(arg) => {
             return arg.event.extendedProps.className || [];
           }}
-          eventDidMount={(info) => {
-            const isMovableEvent = info.event.extendedProps.className?.includes('movable-event');
-
-            if (isMovableEvent) {
-              const el = info.el;
-              const parent = el.closest('.fc-timegrid-col-frame');
-
-              if (parent) {
-                // available-slot の幅を取得
-                const availableSlot = parent.querySelector('.fc-event.available-slot');
-
-                if (availableSlot) {
-                  const slotWidth = (availableSlot as HTMLElement).offsetWidth;
-                  const slotLeft = (availableSlot as HTMLElement).offsetLeft;
-
-                  // movable-event を available-slot と同じ位置・幅に設定
-                  el.style.left = `${slotLeft}px`;
-                  el.style.width = `${slotWidth}px`;
-                }
-              }
-            }
-          }}
           dayCellDidMount={(info) => {
             const cellDate = info.date;
             // この日に利用可能スロット（available-slot）があるかチェック
