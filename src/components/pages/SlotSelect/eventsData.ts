@@ -61,6 +61,58 @@ export const existingEvents: Event[] = [
   { id: 'existing-30', start: '2025-12-10T10:00:00', end: '2025-12-10T11:00:00', title: 'データ分析', editable: false, className: 'existing-event user-8' },
   { id: 'existing-31', start: '2025-12-11T11:30:00', end: '2025-12-11T13:00:00', title: 'レポート作成', editable: false, className: 'existing-event user-8' },
   { id: 'existing-32', start: '2025-12-09T11:00:00', end: '2025-12-09T12:30:00', title: '統計処理', editable: false, className: 'existing-event user-8' },
+
+  // 12/14-20の週の予定
+  // ユーザー1の予定（紫）
+  { id: 'existing-33', start: '2025-12-16T10:00:00', end: '2025-12-16T11:00:00', title: '会議B', editable: false, className: 'existing-event user-1' },
+  { id: 'existing-34', start: '2025-12-16T14:00:00', end: '2025-12-16T15:30:00', title: 'プレゼン準備', editable: false, className: 'existing-event user-1' },
+  { id: 'existing-35', start: '2025-12-18T11:00:00', end: '2025-12-18T12:00:00', title: '部署MTG', editable: false, className: 'existing-event user-1' },
+
+  // ユーザー2の予定（緑）
+  { id: 'existing-36', start: '2025-12-16T09:00:00', end: '2025-12-16T10:00:00', title: '朝会', editable: false, className: 'existing-event user-2' },
+  { id: 'existing-37', start: '2025-12-17T13:00:00', end: '2025-12-17T14:30:00', title: 'ペアプログラミング', editable: false, className: 'existing-event user-2' },
+  { id: 'existing-38', start: '2025-12-19T10:00:00', end: '2025-12-19T11:30:00', title: 'ふりかえり', editable: false, className: 'existing-event user-2' },
+
+  // ユーザー3の予定（オレンジ）
+  { id: 'existing-39', start: '2025-12-16T15:00:00', end: '2025-12-16T16:30:00', title: '企画会議', editable: false, className: 'existing-event user-3' },
+  { id: 'existing-40', start: '2025-12-18T14:00:00', end: '2025-12-18T15:30:00', title: 'クライアント打ち合わせ', editable: false, className: 'existing-event user-3' },
+  { id: 'existing-41', start: '2025-12-19T15:00:00', end: '2025-12-19T17:00:00', title: 'デザインレビュー', editable: false, className: 'existing-event user-3' },
+
+  // ユーザー4の予定（ピンク）
+  { id: 'existing-42', start: '2025-12-15T10:00:00', end: '2025-12-15T11:00:00', title: '週次報告', editable: false, className: 'existing-event user-4' },
+  { id: 'existing-43', start: '2025-12-17T15:00:00', end: '2025-12-17T16:00:00', title: 'メンター面談', editable: false, className: 'existing-event user-4' },
+  { id: 'existing-44', start: '2025-12-18T16:00:00', end: '2025-12-18T17:30:00', title: '部門会議', editable: false, className: 'existing-event user-4' },
+
+  // ユーザー5の予定（青）
+  { id: 'existing-45', start: '2025-12-17T10:00:00', end: '2025-12-17T11:30:00', title: 'アーキテクチャレビュー', editable: false, className: 'existing-event user-5' },
+  { id: 'existing-46', start: '2025-12-18T10:00:00', end: '2025-12-18T11:30:00', title: 'API設計', editable: false, className: 'existing-event user-5' },
+  { id: 'existing-47', start: '2025-12-19T14:00:00', end: '2025-12-19T15:30:00', title: 'パフォーマンス検証', editable: false, className: 'existing-event user-5' },
+
+  // ユーザー6の予定（赤）
+  { id: 'existing-48', start: '2025-12-17T10:00:00', end: '2025-12-17T11:00:00', title: '脆弱性診断', editable: false, className: 'existing-event user-6' },
+  { id: 'existing-49', start: '2025-12-18T09:00:00', end: '2025-12-18T10:30:00', title: 'セキュリティパッチ', editable: false, className: 'existing-event user-6' },
+  { id: 'existing-50', start: '2025-12-16T13:30:00', end: '2025-12-16T15:00:00', title: 'コンプライアンス確認', editable: false, className: 'existing-event user-6' },
+
+  // ユーザー7の予定（黄）
+  { id: 'existing-51', start: '2025-12-17T10:00:00', end: '2025-12-17T11:00:00', title: 'SNS戦略会議', editable: false, className: 'existing-event user-7' },
+  { id: 'existing-52', start: '2025-12-18T15:00:00', end: '2025-12-18T16:30:00', title: 'コンテンツ企画', editable: false, className: 'existing-event user-7' },
+  { id: 'existing-53', start: '2025-12-19T11:00:00', end: '2025-12-19T12:00:00', title: '効果測定', editable: false, className: 'existing-event user-7' },
+
+  // ユーザー8の予定（シアン）
+  { id: 'existing-54', start: '2025-12-17T10:00:00', end: '2025-12-17T11:00:00', title: 'BIツール検討', editable: false, className: 'existing-event user-8' },
+  { id: 'existing-55', start: '2025-12-18T11:30:00', end: '2025-12-18T13:00:00', title: 'ダッシュボード作成', editable: false, className: 'existing-event user-8' },
+  { id: 'existing-56', start: '2025-12-16T11:00:00', end: '2025-12-16T12:30:00', title: 'データクレンジング', editable: false, className: 'existing-event user-8' },
+
+  // 週末（12/14、12/20）の予定
+  // 日曜日 12/14 の予定
+  { id: 'existing-57', start: '2025-12-14T10:00:00', end: '2025-12-14T11:00:00', title: '個人面談', editable: false, className: 'existing-event user-1' },
+  { id: 'existing-58', start: '2025-12-14T14:00:00', end: '2025-12-14T15:30:00', title: 'ワークショップ', editable: false, className: 'existing-event user-3' },
+  { id: 'existing-59', start: '2025-12-14T11:00:00', end: '2025-12-14T12:00:00', title: 'スキルアップ講座', editable: false, className: 'existing-event user-5' },
+
+  // 土曜日 12/20 の予定
+  { id: 'existing-60', start: '2025-12-20T10:00:00', end: '2025-12-20T11:00:00', title: 'チームビルディング', editable: false, className: 'existing-event user-2' },
+  { id: 'existing-61', start: '2025-12-20T13:00:00', end: '2025-12-20T14:30:00', title: '社内勉強会', editable: false, className: 'existing-event user-4' },
+  { id: 'existing-62', start: '2025-12-20T15:00:00', end: '2025-12-20T16:00:00', title: 'メンテナンス作業', editable: false, className: 'existing-event user-6' },
 ];
 
 export const events: Event[] = [
@@ -90,6 +142,40 @@ export const events: Event[] = [
   { id: '7', start: '2025-12-12T09:00:00', end: '2025-12-12T10:00:00', title: '9:00-10:00', editable: false, className: 'available-slot' },
   { id: '8', start: '2025-12-12T13:00:00', end: '2025-12-12T14:00:00', title: '13:00-14:00', editable: false, className: 'available-slot' },
   { id: '9', start: '2025-12-12T16:00:00', end: '2025-12-12T18:00:00', title: '16:00-18:00', editable: false, className: 'available-slot' },
+
+  // 12/14-20の週の利用可能スロット
+  // 日曜日 12/14 の利用可能スロット（背景、移動不可）
+  { id: '10', start: '2025-12-14T10:00:00', end: '2025-12-14T12:00:00', title: '10:00-12:00', editable: false, className: 'available-slot' },
+  { id: '11', start: '2025-12-14T13:00:00', end: '2025-12-14T15:00:00', title: '13:00-15:00', editable: false, className: 'available-slot' },
+
+  // 月曜日 12/15 の利用可能スロット（背景、移動不可）
+  { id: '12', start: '2025-12-15T09:00:00', end: '2025-12-15T11:00:00', title: '9:00-11:00', editable: false, className: 'available-slot' },
+  { id: '13', start: '2025-12-15T13:00:00', end: '2025-12-15T15:00:00', title: '13:00-15:00', editable: false, className: 'available-slot' },
+  { id: '14', start: '2025-12-15T16:00:00', end: '2025-12-15T18:00:00', title: '16:00-18:00', editable: false, className: 'available-slot' },
+
+  // 火曜日 12/16 の利用可能スロット（背景、移動不可）
+  { id: '15', start: '2025-12-16T09:00:00', end: '2025-12-16T11:00:00', title: '9:00-11:00', editable: false, className: 'available-slot' },
+  { id: '16', start: '2025-12-16T13:00:00', end: '2025-12-16T14:00:00', title: '13:00-14:00', editable: false, className: 'available-slot' },
+  { id: '17', start: '2025-12-16T16:00:00', end: '2025-12-16T18:00:00', title: '16:00-18:00', editable: false, className: 'available-slot' },
+
+  // 水曜日 12/17 の利用可能スロット（背景、移動不可）
+  { id: '18', start: '2025-12-17T09:00:00', end: '2025-12-17T10:00:00', title: '9:00-10:00', editable: false, className: 'available-slot' },
+  { id: '19', start: '2025-12-17T13:00:00', end: '2025-12-17T15:00:00', title: '13:00-15:00', editable: false, className: 'available-slot' },
+  { id: '20', start: '2025-12-17T16:00:00', end: '2025-12-17T18:00:00', title: '16:00-18:00', editable: false, className: 'available-slot' },
+
+  // 木曜日 12/18 の利用可能スロット（背景、移動不可）
+  { id: '21', start: '2025-12-18T09:00:00', end: '2025-12-18T10:00:00', title: '9:00-10:00', editable: false, className: 'available-slot' },
+  { id: '22', start: '2025-12-18T13:00:00', end: '2025-12-18T15:00:00', title: '13:00-15:00', editable: false, className: 'available-slot' },
+  { id: '23', start: '2025-12-18T16:00:00', end: '2025-12-18T18:00:00', title: '16:00-18:00', editable: false, className: 'available-slot' },
+
+  // 金曜日 12/19 の利用可能スロット（背景、移動不可）
+  { id: '24', start: '2025-12-19T09:00:00', end: '2025-12-19T10:00:00', title: '9:00-10:00', editable: false, className: 'available-slot' },
+  { id: '25', start: '2025-12-19T13:00:00', end: '2025-12-19T14:00:00', title: '13:00-14:00', editable: false, className: 'available-slot' },
+  { id: '26', start: '2025-12-19T16:00:00', end: '2025-12-19T18:00:00', title: '16:00-18:00', editable: false, className: 'available-slot' },
+
+  // 土曜日 12/20 の利用可能スロット（背景、移動不可）
+  { id: '27', start: '2025-12-20T10:00:00', end: '2025-12-20T12:00:00', title: '10:00-12:00', editable: false, className: 'available-slot' },
+  { id: '28', start: '2025-12-20T13:00:00', end: '2025-12-20T15:00:00', title: '13:00-15:00', editable: false, className: 'available-slot' },
 
   // 移動可能なイベント（最初のスロット内に配置）
   { id: 'movable-1', start: '2025-12-09T09:00:00', end: '2025-12-09T10:00:00', title: '予約枠', editable: true, className: 'movable-event' },
