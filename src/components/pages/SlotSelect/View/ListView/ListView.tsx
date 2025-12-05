@@ -1,5 +1,5 @@
 import React from 'react';
-import { Event, ViewType } from '../types';
+import { Event, ViewType } from '../../types';
 import './ListView.css';
 
 interface ListViewProps {

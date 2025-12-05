@@ -1,6 +1,6 @@
 import { useState, useEffect, RefObject } from 'react';
 import { ViewType, ViewMode } from '../types';
-import { CalendarViewRef } from '../CalendarView/CalendarView';
+import { CalendarViewRef } from '../View/CalendarView/CalendarView';
 import { calculateDateOffset, getTodayDate, getWeekStartDate } from '../utils/dateUtils';
 
 export const useCalendarNavigation = (calendarRef: RefObject<CalendarViewRef | null>) => {
