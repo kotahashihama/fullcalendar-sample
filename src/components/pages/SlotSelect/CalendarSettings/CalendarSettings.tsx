@@ -39,7 +39,7 @@ const CalendarSettings: React.FC<CalendarSettingsProps> = ({
         <div className="calendar-settings-content">
           <div className="calendar-settings-section">
             <h3>個人</h3>
-            {users.filter((user, index) => index < 6).map((user) => (
+            {users.filter((_, index) => index < 6).map((user) => (
               <div key={user.id} className="calendar-settings-item">
                 <div className="user-info">
                   <div className={`user-color-chip ${user.userClass}`}></div>
@@ -74,7 +74,7 @@ const CalendarSettings: React.FC<CalendarSettingsProps> = ({
             <div className="team-header">
               <div className="team-name">S Spir</div>
             </div>
-            {users.filter((user, index) => index >= 6).map((user) => (
+            {users.filter((_, index) => index >= 6).map((user) => (
               <div key={user.id} className="calendar-settings-item">
                 <div className="user-info">
                   <div className={`user-color-chip ${user.userClass}`}></div>
