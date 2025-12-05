@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import Sidebar from './Sidebar/Sidebar';
 import Header from './Header/Header';
-import Navigation from './SlotSelector/Navigation/Navigation';
 import SlotSelectorHeader from './SlotSelector/Header/Header';
 import CalendarView, { CalendarViewRef } from './SlotSelector/View/CalendarView/CalendarView';
 import ListView from './SlotSelector/View/ListView/ListView';
@@ -269,10 +268,12 @@ const SlotSelect: React.FC = () => {
       <div className="booking-main">
         <Header viewMode={viewMode} onViewModeChange={setViewMode} />
 
-        <Navigation
+        <SlotSelectorHeader
+          dates={getHeaderDates()}
+          events={filteredEvents}
+          viewMode={viewMode}
           currentDate={currentDate}
           currentView={currentView}
-          viewMode={viewMode}
           showViewMenu={showViewMenu}
           onPrev={onPrev}
           onNext={onNext}
@@ -281,8 +282,6 @@ const SlotSelect: React.FC = () => {
           onToggleViewMenu={() => setShowViewMenu(!showViewMenu)}
           onToggleCalendarSettings={() => setShowCalendarSettings(!showCalendarSettings)}
         />
-
-        <SlotSelectorHeader dates={getHeaderDates()} events={filteredEvents} viewMode={viewMode} />
 
         {viewMode === 'calendar' ? (
           <CalendarView
