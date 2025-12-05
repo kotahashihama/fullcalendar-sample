@@ -16,14 +16,13 @@ const CalendarSettings: React.FC<CalendarSettingsProps> = ({
   onClose,
 }) => {
   return (
-    <div className="calendar-settings-overlay" onClick={onClose}>
-      <div className="calendar-settings-panel" onClick={(e) => e.stopPropagation()}>
-        <div className="calendar-settings-header">
-          <h2>カレンダー設定</h2>
-          <button className="close-button" onClick={onClose}>
-            ×
-          </button>
-        </div>
+    <div className="calendar-settings-panel">
+      <div className="calendar-settings-header">
+        <h2>カレンダー設定</h2>
+        <button className="close-button" onClick={onClose}>
+          ×
+        </button>
+      </div>
 
         <div className="calendar-settings-content">
           <div className="calendar-settings-section">
@@ -90,7 +89,6 @@ const CalendarSettings: React.FC<CalendarSettingsProps> = ({
             ))}
           </div>
         </div>
-      </div>
     </div>
   );
 };

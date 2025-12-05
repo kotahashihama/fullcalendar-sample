@@ -299,13 +299,7 @@ const SlotSelect: React.FC = () => {
         )}
       </div>
 
-      <EventModal
-        event={selectedEvent}
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-      />
-
-      {showCalendarSettings && (
+      {showCalendarSettings && viewMode === 'calendar' && (
         <CalendarSettings
           users={users}
           visibleUsers={visibleUsers}
@@ -313,6 +307,12 @@ const SlotSelect: React.FC = () => {
           onClose={() => setShowCalendarSettings(false)}
         />
       )}
+
+      <EventModal
+        event={selectedEvent}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </div>
   );
 };

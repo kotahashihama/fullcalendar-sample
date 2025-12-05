@@ -1,32 +1,12 @@
-.calendar-settings-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  display: flex;
-  justify-content: flex-end;
-}
-
 .calendar-settings-panel {
-  width: 400px;
-  height: 100%;
+  width: 340px;
   background-color: #ffffff;
-  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  border-left: 1px solid #e5e7eb;
   display: flex;
   flex-direction: column;
-  animation: slideIn 0.3s ease-out;
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
+  flex-shrink: 0;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .calendar-settings-header {
